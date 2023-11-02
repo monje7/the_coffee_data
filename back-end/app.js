@@ -6,6 +6,7 @@ import fincaRoute from "./src/routers/finca.route.js";
 import municipioRoute from "./src/routers/municipio.route.js";
 import variedadesRoute from "./src/routers/variedades.route.js";
 import loteRoute from "./src/routers/lote.router.js";
+import analisisRoute from "./src/routers/analisis.router.js";
 
 const app = express();
 
@@ -18,6 +19,19 @@ app.use("/finca",fincaRoute);
 app.use('/municipio',municipioRoute);
 app.use('/variedad',variedadesRoute);
 app.use('/lote',loteRoute);
+app.use('/analisis',analisisRoute);
+
+
+
+app.set ('view engine','ejs');
+app.set('views','./src/view');
+
+app.use(express.static('./src/styles'));
+
+app.get('/documents', (req,res) =>{
+    res.render('index.ejs');
+
+});
 
 app.listen(2000, () => {
     console.log("Servidor se esta ejecutando en el puerto 2000");
