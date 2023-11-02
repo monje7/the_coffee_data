@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
 
     <h1>Documentación API</h1>
@@ -13,68 +15,68 @@
 
     <div class="cont">
         <table>
-           
+
             <tr>
                 <th>Número</th>
                 <th>1</th>
-                
+
             </tr>
             <tr>
                 <td>Nombre del web service</td>
                 <td>Registrar Analisis</td>
-               
-                
+
+
             </tr>
             <tr>
                 <td>URL</td>
-                <td>localhost:2000/analisis/registrar</td>       
+                <td>localhost:4000/analisis/registrar</td>
             </tr>
             <tr>
                 <td>Descripción</td>
-                <td>El método registra un Analisis fisico del café dependiendo los campos requeridos</td>      
-            </tr> 
+                <td>El método registra un Analisis fisico del café dependiendo los campos requeridos</td>
+            </tr>
             <tr>
                 <td>Verbo HTTP</td>
-                <td> POST</td>      
-            </tr> 
+                <td> POST</td>
+            </tr>
             <tr>
                 <td>Header</td>
-          
+
                 <td>
                     <br>Autorizacion Bearer TOKEN<br>
-                    Content-Type	application/json; charset=utf-8
-                
-                </td>    
-            </tr>   
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
             <tr>
                 <td>Usuarios</td>
-                <td>Aprendiz/Instructor</td>    
-            </tr>       
+                <td>Aprendiz/Instructor</td>
+            </tr>
             <tr>
                 <td>Request body from-data</td>
                 <td>CORRECTO <br>
                     <br>Status : 200 OK <br>
                     <br>BODY:{<br>
-                        'mensaje':'Registro de analisis exitoso..!'
+                    'mensaje':'Registro de analisis exitoso..!'
                     } <br>
-    
+
                 </td>
-    
+
             </tr>
             <tr>
                 <td>Responde</td>
                 <td>
                     <br>
-                        {
-                            "tipo":"fisico",<br>
-                            "calidad":"excelente",<br>
-                            "proceso":"certificar",<br>
-                            "muestras_id":1,<br>
-                            "usuarios_id": 1,<br>
-                            "tipo_analisis_id":1,<br>
-                            "estado":""<br>
-                        }
-                     <br>
+                    {
+                    "tipo":"fisico",<br>
+                    "calidad":"excelente",<br>
+                    "proceso":"certificar",<br>
+                    "muestras_id":1,<br>
+                    "usuarios_id": 1,<br>
+                    "tipo_analisis_id":1,<br>
+                    "estado":""<br>
+                    }
+                    <br>
                     <br>INCORRECTO <br>
                     Status:401 <br>
                     "mensaje":"No se registro el Analisis..!"<br>
@@ -84,18 +86,18 @@
 
 
 
-                </td>    
+                </td>
             </tr>
-    </table>
-    <br>
+        </table>
+        <br>
     </div><br>
     <div class="cont-2">
         <table>
-               
+
             <tr>
                 <th>Número</th>
                 <th>2</th>
-                
+
             </tr>
             <tr>
                 <td>Nombre del webservice</td>
@@ -103,120 +105,120 @@
             </tr>
             <tr>
                 <td>URL</td>
-                <td>localhost:2000/analisis/listar</td>       
+                <td>localhost:4000/analisis/listar</td>
             </tr>
             <tr>
                 <td>Descripción</td>
-                <td> El método lista en que fecha y que tipo de analisis se han ingresado</td>      
+                <td> El método lista en que fecha y que tipo de analisis se han ingresado</td>
             </tr>
             <tr>
                 <td>Verbo HTTP</td>
-                <td> GET</td>      
-            </tr> 
+                <td> GET</td>
+            </tr>
             <tr>
                 <td>Header</td>
-                <td> Content-Type	application/json; charset=utf-8</td>    
-            </tr>   
+                <td> Content-Type application/json; charset=utf-8</td>
+            </tr>
             <tr>
                 <td>Usuarios</td>
-                <td>Aprendiz/Instructor</td>    
-            </tr>    
+                <td>Aprendiz/Instructor</td>
+            </tr>
             <tr>
                 <td>Request body from-data</td>
                 <td>CORRECTO <br>
-                    <br>Status : 200 OK <br>    
+                    <br>Status : 200 OK <br>
                 </td>
-    
+
             </tr>
             <tr>
                 <td>Responde</td>
                 <td>
                     <br>
-	<br>
-		"[
-        {
-            "id": 3,<br>
-            "fecha_analisis": "2023-11-01T15:37:10.000Z",<br>
-            "tipo": "Fisico",<br>
-            "calidad": "execelente",<br>
-            "proceso": "Practica",<br>
-            "muestras_id": 1,<br>
-            "usuarios_id": 1,<br>
-            "tipo_analisis_id": 1,<br>
-            "estado": 0<br>
-        },<br>
-   
-	<br>
-        {
-            "id": 4,<br>
-            "fecha_analisis": "2023-11-01T22:16:49.000Z",<br>
-            "tipo": "Fisico",<br>
-            "calidad": "bueno",<br>
-            "proceso": "Practica",<br>
-            "muestras_id": 1,<br>
-            "usuarios_id": 1,<br>
-            "tipo_analisis_id": 1,<br>
-            "estado": 0<br>
-        }<br>
+                    <br>
+                    "[
+                    {
+                    "id": 3,<br>
+                    "fecha_analisis": "2023-11-01T15:37:10.000Z",<br>
+                    "tipo": "Fisico",<br>
+                    "calidad": "execelente",<br>
+                    "proceso": "Practica",<br>
+                    "muestras_id": 1,<br>
+                    "usuarios_id": 1,<br>
+                    "tipo_analisis_id": 1,<br>
+                    "estado": 0<br>
+                    },<br>
 
-    <br>INCORRECTO <br>
-    Status:401 <br>
-    "mensaje":"error en listar analisis de la base de datos"<br>
-    
+                    <br>
+                    {
+                    "id": 4,<br>
+                    "fecha_analisis": "2023-11-01T22:16:49.000Z",<br>
+                    "tipo": "Fisico",<br>
+                    "calidad": "bueno",<br>
+                    "proceso": "Practica",<br>
+                    "muestras_id": 1,<br>
+                    "usuarios_id": 1,<br>
+                    "tipo_analisis_id": 1,<br>
+                    "estado": 0<br>
+                    }<br>
 
-</table>
-</div>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"error en listar analisis de la base de datos"<br>
 
-<div class="cont-3">
 
-    <table>
-       
-        <tr>
-            <th>Número</th>
-            <th>3</th>
-            
-        </tr>
-        <tr>
-            <td>Nombre del webservice</td>
-            <td>Buscar Usuarios</td>
-           
-            
-        </tr>
-        <tr>
-            <td>URL</td>
-            <td>localhost:2000/analisis/buscar/4</td>       
-        </tr>
-        <tr>
-            <td>Descripción</td>
-            <td>  El método busca en que fecha y que tipo de analisis <br>
-                 se han ingresado</td>      
-        </tr> 
-        <tr>
-            <td>Verbo HTTP</td>
-            <td> GET</td>      
-        </tr> 
-        <tr>
-            <td>Header</td>
-            <td> Content-Type	application/json; charset=utf-8</td>    
-        </tr>   
-        <tr>
-            <td>Usuarios</td>
-            <td>Aprendiz/Instructor</td>    
-        </tr>       
-        <tr>
-            <td>Request body from-data</td>
-            <td>CORRECTO <br>
-                <br>Status : 200 OK <br>
-                <br>
+        </table>
+    </div>
 
-            </td>
+    <div class="cont-2">
 
-        </tr>
-        <tr>
-            <td>Responde</td>
-            <td>
-                <br>	
-                {
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>3</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del webservice</td>
+                <td>Buscar Usuarios</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/analisis/buscar/4</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td> El método busca en que fecha y que tipo de analisis <br>
+                    se han ingresado</td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> GET</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+                <td> Content-Type application/json; charset=utf-8</td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {
                     "id": 4,<br>
                     "fecha_analisis": "2023-11-01T22:16:49.000Z",<br>
                     "tipo": "Fisico",<br>
@@ -225,160 +227,693 @@
                     "muestras_id": 1,<br>
                     "usuarios_id": 1,<br>
                     "estado": 0<br>
-                <br> }
-            
+                    <br> }
 
-                <br>Error Servidor <br>
+
+                    <br>Error Servidor <br>
                     'status':500,<br>
                     "Error":"Error en buscar analisis"<br>
-                
-            </td>    
-        </tr>
-</table>
-<br>
-</div>
 
-<div class="cont-4">
-    <table>
-       
-        <tr>
-            <th>Buscar Analisis</th>
-            <th>4</th>
-            
-        </tr>
-        <tr>
-            <td>Nombre del webservice</td>
-            <td>Actualizar Analisis</td>
-           
-            
-        </tr>
-        <tr>
-            <td>URl</td>
-            <td>localhost:2000/analisis/update/5</td>       
-        </tr>
-        <tr>
-            <td>Descripción</td>
-            <td>El método actualiza en que fecha y que tipo de analisis <br>
-                 se han ingresado a través de el id ingresado en la url</td>      
-        </tr> 
-        <tr>
-            <td>Verbo HTTP</td>
-            <td> PUT</td>      
-        </tr> 
-        <tr>
-            <td>Header</td>
-           
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
 
-            <td>  <br>Autorizacion Bearer TOKEN<br>
-                
-                Content-Type	application/json; charset=utf-8</td>    
-        </tr>   
-        <tr>
-            <td>Usuarios</td>
-            <td>Aprendiz,Instructor</td>    
-        </tr>       
-        <tr>
-            <td>Request body from-data</td>
-            <td>CORRECTO <br>
-                <br>Status : 200 OK <br>
-                <br>BODY:{<br>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Buscar Analisis</th>
+                <th>4</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del webservice</td>
+                <td>Actualizar Analisis</td>
+
+
+            </tr>
+            <tr>
+                <td>URl</td>
+                <td>localhost:4000/analisis/update/5</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método actualiza en que fecha y que tipo de analisis <br>
+                    se han ingresado a través de el id ingresado en la url</td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PUT</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+
+                <td> <br>Autorizacion Bearer TOKEN<br>
+
+                    Content-Type application/json; charset=utf-8</td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz,Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
                     {<br>
-                            "tipo":"fisico",<br>
-                            "calidad":"bueno",<br>
-                            "proceso":"certificar",<br>
-                            "muestras_id":1,<br>
-                            "usuarios_id": 1,<br>
-                            "tipo_analisis_id":1,<br>
-                            "estado":"" <br>
+                    "tipo":"fisico",<br>
+                    "calidad":"bueno",<br>
+                    "proceso":"certificar",<br>
+                    "muestras_id":1,<br>
+                    "usuarios_id": 1,<br>
+                    "tipo_analisis_id":1,<br>
+                    "estado":"" <br>
                     }<br>
-                
+
                     <br> 'mensaje':'¡Registro de Analisis actualizado..! '
-                } <br>
+                    } <br>
 
-            </td>
+                </td>
 
-        </tr>
-        <tr>
-            <td>Responde</td>
-            <td>
-                <br>INCORRECTO <br>
-                Status:401 <br>
-                "mensaje":"¡El analisis no fue actualizado"<br>
-                <br>Error Servidor <br>
-                'status':500,<br>
-                "Error":"Error en el servidor"<br>
-            </td>    
-        </tr>
-</table>
-<br>
-</div>
-    
-<div class="cont-5">
-    <table>
-       
-        <tr>
-            <th>Número</th>
-            <th>5</th>
-            
-        </tr>
-        <tr>
-            <td>Nombre del webservice</td>
-            <td>Eliminar Analisis</td>
-           
-            
-        </tr>
-        <tr>
-            <td>URL</td>
-            <td>localhost:2000/analisis/delete/3</td>       
-        </tr>
-        <tr>
-            <td>Descripción</td>
-            <td>El método actualiza en que fecha y que tipo de analisis <br>
-                se han ingresado a través de el id ingresado en la url</td>      
-        </tr> 
-        <tr>
-            <td>Verbo HTTP</td>
-            <td> DELETE</td>      
-        </tr> 
-        <tr>
-            <td>Header</td>
-           
-            <td>
-                <br>Autorizacion Bearer TOKEN<br>
-                 Content-Type	application/json; charset=utf-8</td>    
-        </tr>   
-        <tr>
-            <td>Usuarios</td>
-            <td>Administrador</td>    
-        </tr>       
-        <tr>
-            <td>Request body from-data</td>
-            <td>CORRECTO <br>
-                <br>Status : 200 OK <br>
-                <br>BODY:{<br>
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"¡El analisis no fue actualizado"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error en el servidor"<br>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>5</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del webservice</td>
+                <td>Eliminar Analisis</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/analisis/delete/3</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método actualiza en que fecha y que tipo de analisis <br>
+                    se han ingresado a través de el id ingresado en la url</td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> DELETE</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Administrador</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
                     'mensaje':'se elimino con exito el usuario'
-                } <br>
+                    } <br>
 
-            </td>
+                </td>
 
-        </tr>
-        <tr>
-            <td>Responde</td>
-            <td>
-                <br>INCORRECTO <br>
-                Status:401 <br>
-                "mensaje":"no se elimino el usuario"<br>
-                <br>Error Servidor <br>
-                'status':500,<br>
-                "Error":"Error en el Servidor"<br>
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"no se elimino el usuario"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error en el Servidor"<br>
 
-            </td>    
-        </tr>
-</table>
-<br>
-</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h4>Fincas</h4>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>1</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Registrar finca</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/finca/registrar/</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método registra una finca </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> POST</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'Registro de finca exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {
+                    "id": 1,<br>
+                    "fecha_creacion": "2023-11-01T15:09:47.000Z",<br>
+                    "nombre": "los rosales",<br>
+                    "longitud": "345",<br>
+                    "latitud": "324",<br>
+                    "usuarios_id": 1,<br>
+                    "municipios_id": 1,<br>
+                    "estado": 0<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se registro la finca..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
 
 
 
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>2</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Actualizar finca</td>
 
 
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/finca/actualizar/id</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método actualiza una finca ya registrada </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PUT</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'se actualizo la finca con exitoso..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {
+                    "id": 1,<br>
+                    "fecha_creacion": "2023-11-01T15:09:47.000Z",<br>
+                    "nombre": "los rosales filo alto",<br>
+                    "longitud": "348",<br>
+                    "latitud": "314",<br>
+                    "usuarios_id": 1,<br>
+                    "municipios_id": 1,<br>
+                    "estado": 0<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se actualizo la finca..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>3</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Buscar finca</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/finca/buscar/1</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método busca una finca </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> GET</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'busqueda de finca exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {
+                    "id": 1,<br>
+                    "fecha_creacion": "2023-11-01T15:09:47.000Z",<br>
+                    "nombre": "los rosales",<br>
+                    "longitud": "345",<br>
+                    "latitud": "324",<br>
+                    "usuarios_id": 1,<br>
+                    "municipios_id": 1,<br>
+                    "estado": 0<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se encontro la finca..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>4</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>status de la finca</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/finca/desactivar/3</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método sera la desactivacion de una finca por su id </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PATCH</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'desactivacion de finca exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {
+                    "id": 3,<br>
+                    "fecha_creacion": "2023-11-01T15:09:47.000Z",<br>
+                    "nombre": "los rosales",<br>
+                    "longitud": "345",<br>
+                    "latitud": "324",<br>
+                    "usuarios_id": 1,<br>
+                    "municipios_id": 1,<br>
+                    "estado": 0<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se desactivo la finca..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h4>Variedades</h4>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>1</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Registrar variedad</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/variedad/registrar</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método registra una variedad </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> POST</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'Registro de variedad exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                    "fecha_creacion": "2022-01-23",<br>
+                    "nombre":"borbom"<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se registro la variedad..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>2</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Actualizar variedad</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/variedad/actualizar/4</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método actualiza una variedad ya registrada </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PUT</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'se actualizo la variedad con exitoso..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                    "fecha_creacion": "2022-01-23",<br>
+                    "nombre":"el refugio borbom"<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se actualizo la variedad..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h4>Municipios</h4>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>1</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Registrar Municipio</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/municipio/registrar</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método registra un municipio </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> POST</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'Registro de municipio exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                        "nombre": "pitalito chillurco" <br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se registro el municipio..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>

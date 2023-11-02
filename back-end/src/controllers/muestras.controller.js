@@ -95,7 +95,7 @@ export const buscarMuestra = async (req, res) => {
 export const listarMuestras = async (req, res) => {
 
     try {
-        const [result] = await pool.query("SELECT m.id, m.fecha_creacion, m.nombre, m.cantidad, l.nombre as lote,f.nombre as finca, concat(u.nombre,' ',u.apellido)  as propietario from muestras m JOIN lotes l ON m.lotes_id = l.id JOIN fincas f ON l.fincas_id = f.id JOIN usuarios u ON f.usuarios_id = u.id");
+        const [result] = await pool.query("SELECT m.id, m.fecha_creacion, m.cantidad, l.nombre as lote,f.nombre as finca, concat(u.nombre,' ',u.apellido)  as propietario from muestras m JOIN lotes l ON m.lotes_id = l.id JOIN fincas f ON l.fincas_id = f.id JOIN usuarios u ON f.usuarios_id = u.id");
         res.status(200).json(result);
     } catch (err) {
         res.status(500).json({

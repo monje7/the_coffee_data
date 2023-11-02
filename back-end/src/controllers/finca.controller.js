@@ -4,6 +4,19 @@ import {pool} from '../database/conexion.js';
 import {validationResult} from 'express-validator';
 
 
+export const listarFinca= async (req,res)=>{
+    try{
+
+        const[result]= await pool.query("select * from fincas");
+        res.status(200).json(result);
+
+
+    }catch(err){
+        res.status(500).json({ message:'erro en listarFinca: '+err});
+    }
+};
+
+
 export const buscarFinca= async (req,res)=>{ 
     try{
         let id=req.params.id;
@@ -82,13 +95,13 @@ export const desactivarFinca = async (req, res) => {
       if(rows.affectedRows > 0) {
         return   res.status(200).json({
                               "status":200,
-                              "message":"se registro con exito el lote"
+                              "message":"se desactivo con exito la finca"
                                  }
                                 );
       }else{
         return    res.status(401).json({
                                 "status":401,
-                                "message":"no se registro con exito el lote"
+                                "message":"no se desactivo con exito la finca"
                                 }
                                 );
         }

@@ -12,6 +12,9 @@ h2{
     color: #ababab;
     text-align: center;
 }
+h4{
+    text-align: center;
+}
 th{
     background-color:  #ababab;
 }
@@ -40,32 +43,4 @@ table, th, td {
     gap: 34px;
 
 }
-.cont-3{
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   text-align: left;
-    gap: 34px;
-
-}
-.cont-4{
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   text-align: left;
-    gap: 34px;
-
-}
-.cont-5{
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   text-align: left;
-    gap: 34px;
-
-}
-
 
