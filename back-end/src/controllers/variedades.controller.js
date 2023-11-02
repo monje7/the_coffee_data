@@ -3,6 +3,19 @@
 import {pool} from '../database/conexion.js';
 import {validationResult} from 'express-validator';
 
+
+export const listarVariedad= async (req,res)=>{
+  try{
+
+      const[result]= await pool.query("select * from variedades");
+      res.status(200).json(result);
+
+
+  }catch(err){
+      res.status(500).json({ message:'erro en listarVariedad: '+err});
+  }
+};
+
 export const guardarVariedad= async (req, res) => {
 
     try{
@@ -48,7 +61,7 @@ export const actualizarVariedad=async (req, res) =>{
     let id = req.params.id;
     let {fecha_creacion	,nombre,estado} = req.body;
 
-    let sql=`update variedades SET fecha_creacion='${fecha_creacion}',nombre='${nombre}',estado='${estado}'
+    let sql=`update variedades SET fecha_creacion='${fecha_creacion}',nombre='${nombre}'
             where id=${id}`;
 
     const [rows] = await pool.query(sql);

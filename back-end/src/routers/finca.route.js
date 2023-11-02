@@ -1,11 +1,11 @@
     import{Router} from 'express';
     import { check } from 'express-validator';
 
-    import{buscarFinca,guardarFinca,actualizarFinca,desactivarFinca} from '../controllers/finca.controller.js';
+    import{buscarFinca,guardarFinca,actualizarFinca,desactivarFinca,listarFinca} from '../controllers/finca.controller.js';
 
     const fincaRoute= Router();
 
-   
+   fincaRoute.get('/listar',listarFinca);
     fincaRoute.get('/buscar/:id',buscarFinca);
     fincaRoute.post('/registrar/',guardarFinca);
     fincaRoute.put('/actualizar/:id',actualizarFinca);

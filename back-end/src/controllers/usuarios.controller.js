@@ -1,4 +1,4 @@
-import { pool } from "../database/conexion.js";
+ import { pool } from "../database/conexion.js";
     export const guardarUsuario = async (req, res) => {
         try {
             let error= validationResult(req);
@@ -37,7 +37,7 @@ import { pool } from "../database/conexion.js";
             );
             
         }
-    }
+    };
 
 export const listarUsuario = async (req, res) => {
 
@@ -53,7 +53,7 @@ export const listarUsuario = async (req, res) => {
             massage: "Error en listar usuario :" + err
         });
     }
-}
+};
 export const buscarUsuarios = async (req, res) => {
     try {
         let id = req.params.id;
@@ -131,4 +131,4 @@ export const actualizarUsuario = async (req, res) => {
         );
 
     }
-}
+};
