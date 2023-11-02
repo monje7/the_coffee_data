@@ -7,6 +7,7 @@ import municipioRoute from "./src/routers/municipio.route.js";
 import variedadesRoute from "./src/routers/variedades.route.js";
 import loteRoute from "./src/routers/lote.router.js";
 import analisisRoute from "./src/routers/analisis.router.js";
+import resultadoRoute from "./src/routers/resultado.router.js";
 
 const app = express();
 
@@ -20,7 +21,7 @@ app.use('/municipio',municipioRoute);
 app.use('/variedad',variedadesRoute);
 app.use('/lote',loteRoute);
 app.use('/analisis',analisisRoute);
-
+app.use('/resultado',resultadoRoute);
 
 
 app.set ('view engine','ejs');
