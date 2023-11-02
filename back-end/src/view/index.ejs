@@ -843,6 +843,80 @@
             </tr>
         </table>
     </div>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>3</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Status variedad</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/variedad/desactivar/1</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método desactiva una variedad </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PATCH</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'desactivacion de variedad exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                    "fecha_creacion": "2022-01-23",<br>
+                    "nombre":"borbom"<br>
+                    "Estado":"desactivado"<br>
+                    }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se desactivo la variedad..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
 
     <h4>Municipios</h4>
     <div class="cont-2">
@@ -917,3 +991,235 @@
         </table>
     </div>
     <br>
+    <h4>Lotes</h4>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>1</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>Actualizar lote</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/lote/Actualizar/:id</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método actualiza un lote </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PUT</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'actualizacion de lotes exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                        "id": 1,<br>
+                        "fecha_creacion": "2023-11-01T15:10:06.000Z",<br>
+                        "nombre": "los rosales",<br>
+                        "latitud": "324",<br>
+                        "longitud": "345",<br>
+                        "fincas_id": 1,<br>
+                        "estado": 0<br>
+                      }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se actualizo el lote..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>2</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>status del lote</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/lote/desactivar/:id</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método desactiva un lote </td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> PATCH</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'desactivacion de lotes exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                        "id": 1,<br>
+                        "fecha_creacion": "2023-11-01T15:10:06.000Z",<br>
+                        "nombre": "los rosales",<br>
+                        "latitud": "324",<br>
+                        "longitud": "345",<br>
+                        "fincas_id": 1,<br>
+                        "estado": 0<br>
+                      }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se desactivo el lote..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="cont-2">
+        <table>
+
+            <tr>
+                <th>Número</th>
+                <th>3</th>
+
+            </tr>
+            <tr>
+                <td>Nombre del web service</td>
+                <td>listar lote</td>
+
+
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>localhost:4000/lote/listar</td>
+            </tr>
+            <tr>
+                <td>Descripción</td>
+                <td>El método lista los lotes</td>
+            </tr>
+            <tr>
+                <td>Verbo HTTP</td>
+                <td> GET</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+
+                <td>
+                    <br>Autorizacion Bearer TOKEN<br>
+                    Content-Type application/json; charset=utf-8
+
+                </td>
+            </tr>
+            <tr>
+                <td>Usuarios</td>
+                <td>Aprendiz/Instructor</td>
+            </tr>
+            <tr>
+                <td>Request body from-data</td>
+                <td>CORRECTO <br>
+                    <br>Status : 200 OK <br>
+                    <br>BODY:{<br>
+                    'mensaje':'lista de lotes exitosa..!'
+                    } <br>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Responde</td>
+                <td>
+                    <br>
+                    {<br>
+                        "id": 1,<br>
+                        "fecha_creacion": "2023-11-01T15:10:06.000Z",<br>
+                        "nombre": "los rosales",<br>
+                        "latitud": "324",<br>
+                        "longitud": "345",<br>
+                        "fincas_id": 1,<br>
+                        "estado": 0<br>
+                      }
+                    <br>
+                    <br>INCORRECTO <br>
+                    Status:401 <br>
+                    "mensaje":"No se listo el lote..!"<br>
+                    <br>Error Servidor <br>
+                    'status':500,<br>
+                    "Error":"Error del Servidor"<br>
+
+
+
+                </td>
+            </tr>
+        </table>
+    </div>  
