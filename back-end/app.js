@@ -8,6 +8,8 @@ import variedadesRoute from "./src/routers/variedades.route.js";
 import loteRoute from "./src/routers/lote.router.js";
 import analisisRoute from "./src/routers/analisis.router.js";
 import resultadoRoute from "./src/routers/resultado.router.js";
+import variablesRoute from "./src/routers/variables.router.js";
+
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.use('/variedad',variedadesRoute);
 app.use('/lote',loteRoute);
 app.use('/analisis',analisisRoute);
 app.use('/resultado',resultadoRoute);
+app.use('/variable',variablesRoute)
+
 
 
 app.set ('view engine','ejs');
