@@ -386,7 +386,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>1</th>
+                <th>6</th>
 
             </tr>
             <tr>
@@ -465,7 +465,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>2</th>
+                <th>7</th>
 
             </tr>
             <tr>
@@ -544,7 +544,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>3</th>
+                <th>8</th>
 
             </tr>
             <tr>
@@ -623,7 +623,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>4</th>
+                <th>9</th>
 
             </tr>
             <tr>
@@ -703,7 +703,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>1</th>
+                <th>10</th>
 
             </tr>
             <tr>
@@ -776,7 +776,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>2</th>
+                <th>11</th>
 
             </tr>
             <tr>
@@ -848,7 +848,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>3</th>
+                <th>12</th>
 
             </tr>
             <tr>
@@ -924,7 +924,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>1</th>
+                <th>13</th>
 
             </tr>
             <tr>
@@ -997,7 +997,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>1</th>
+                <th>14</th>
 
             </tr>
             <tr>
@@ -1074,7 +1074,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>2</th>
+                <th>15</th>
 
             </tr>
             <tr>
@@ -1151,7 +1151,7 @@
 
             <tr>
                 <th>Número</th>
-                <th>3</th>
+                <th>16</th>
 
             </tr>
             <tr>
@@ -1222,30 +1222,31 @@
                 </td>
             </tr>
         </table><br>
+        </div>
         
 
 
 
-        <h1>Documentación API Usuarios</h1>
+        <h1>Documentación API Muestras</h1>
 
-        <h2>Crear Usuario</h2>
+        <h2>Registrar Muestra</h2>
         <div class="cont-2">
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>1</th>
+                    <th>21</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
-                    <td>Registrar Usuario</td>
+                    <td>Registrar muestra</td>
                 </tr>
                 <tr>
                     <td>URL</td>
-                    <td>localhost:4000/usuarios/registrar</td>
+                    <td>http://localhost:4000/muestra/registrar</td>
                 </tr>
                 <tr>
                     <td>Descripción</td>
-                    <td>Registra un nuevo usuario en el sistema.</td>
+                    <td>Registra una nueva muestra en el sistema.</td>
                 </tr>
                 <tr>
                     <td>Verbo HTTP</td>
@@ -1255,7 +1256,7 @@
                     <td>Header</td>
                     <td>
                         <br>Autorización Bearer TOKEN<br>
-                        Content-Type application/json; charset=utf-8
+                        Content-Type application/json;
                     </td>
                 </tr>
                 <tr>
@@ -1266,9 +1267,13 @@
                     <td>Request body JSON</td>
                     <td>
                         {
-                            "nombre": "Nombre del Usuario",
-                            "email": "usuario@dominio.com",
-                            "rol": "Aprendiz/Instructor"
+                            "fecha":"2022-09-09", <br>
+                            "nombre":"Fisica",<br>
+                            "cantidad":15,<br>
+                            "lotes_id":1,<br>
+                            "muestrascol":"prueba",<br>
+                            "estado":"1",<br>
+                            "variedades_id":"1"<br>
                         }
                     </td>
                 </tr>
@@ -1276,9 +1281,20 @@
                     <td>Responde</td>
                     <td>
                         Status: 200 OK <br>
-                        BODY: {
-                            "mensaje": "Registro de usuario exitoso..!"
-                        }
+                        BODY: { <br>
+                            "mensaje": "La muestras se registro con exito" <br>
+                        }  <br>
+                        INCORRECTO <br>
+                        Status: 401 <br>
+                        BODY: { <br>
+                            "mensaje": "La muestra no se registro" <br>
+                        }  <br>
+                        Error Servidor <br>
+                        Status: 500 <br>
+                        BODY: { <br>
+                            "mensaje": "error en en el servidor" <br>
+                        } 
+
                     </td>
                 </tr>
             </table>
@@ -1289,7 +1305,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>2</th>
+                    <th>18</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1337,7 +1353,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>3</th>
+                    <th>19</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1395,7 +1411,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>4</th>
+                    <th>20</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1435,5 +1451,214 @@
             </table>
         </div>
      
+
+        <h1>Documentación API Usuarios</h1>
+
+        <h2>Crear Usuario</h2>
+        <div class="cont-2">
+            <table>
+                <tr>
+                    <th>Número</th>
+                    <th>17</th>
+                </tr>
+                <tr>
+                    <td>Nombre del web service</td>
+                    <td>Registrar Usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>localhost:4000/usuarios/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Registra un nuevo usuario en el sistema.</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>
+                        <br>Autorización Bearer TOKEN<br>
+                        Content-Type application/json; charset=utf-8
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usuarios</td>
+                    <td>Aprendiz/Instructor</td>
+                </tr>
+                <tr>
+                    <td>Request body JSON</td>
+                    <td>
+                        {
+                            "nombre": "Nombre del Usuario",
+                            "email": "usuario@dominio.com",
+                            "rol": "Aprendiz/Instructor"
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>Responde</td>
+                    <td>
+                        Status: 200 OK <br>
+                        BODY: {
+                            "mensaje": "Registro de usuario exitoso..!"
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div><br>
+    
+        <h2>Obtener Usuario por ID</h2>
+        <div class="cont-2">
+            <table>
+                <tr>
+                    <th>Número</th>
+                    <th>18</th>
+                </tr>
+                <tr>
+                    <td>Nombre del web service</td>
+                    <td>Obtener Usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>localhost:4000/usuarios/{id}</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Obtiene la información de un usuario específico utilizando su ID.</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>
+                        <br>Autorización Bearer TOKEN
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usuarios</td>
+                    <td>Aprendiz/Instructor</td>
+                </tr>
+                <tr>
+                    <td>Responde</td>
+                    <td>
+                        Status: 200 OK <br>
+                        BODY: {
+                            "id": 1,
+                            "nombre": "Nombre del Usuario",
+                            "email": "usuario@dominio.com",
+                            "rol": "Aprendiz/Instructor"
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div><br>
+    
+        <h2>Actualizar Usuario</h2>
+        <div class="cont-2">
+            <table>
+                <tr>
+                    <th>Número</th>
+                    <th>19</th>
+                </tr>
+                <tr>
+                    <td>Nombre del web service</td>
+                    <td>Actualizar Usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>localhost:4000/usuarios/actualizar/{id}</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Actualiza la información de un usuario utilizando su ID.</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>
+                        <br>Autorización Bearer TOKEN<br>
+                        Content-Type application/json; charset=utf-8
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usuarios</td>
+                    <td>Instructor</td>
+                </tr>
+                <tr>
+                    <td>Request body JSON</td>
+                    <td>
+                        {
+                            "nombre": "Nuevo Nombre del Usuario",
+                            "email": "nuevo_usuario@dominio.com",
+                            "rol": "Instructor"
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>Responde</td>
+                    <td>
+                        Status: 200 OK <br>
+                        BODY: {
+                            "mensaje": "Actualización de usuario exitosa..!"
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+    
+        <h2>Eliminar Usuario</h2>
+        
+        <div class="cont-2">
+            <table>
+                <tr>
+                    <th>Número</th>
+                    <th>20</th>
+                </tr>
+                <tr>
+                    <td>Nombre del web service</td>
+                    <td>Eliminar Usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>localhost:4000/usuarios/eliminar/{id}</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Elimina un usuario utilizando su ID.</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>
+                        <br>Autorización Bearer TOKEN
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usuarios</td>
+                    <td>Instructor</td>
+                </tr>
+                <tr>
+                    <td>Responde</td>
+                    <td>
+                        Status: 200 OK <br>
+                        BODY: {
+                            "mensaje": "Eliminación de usuario exitosa..!"
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
 
         
