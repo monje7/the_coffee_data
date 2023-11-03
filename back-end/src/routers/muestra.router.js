@@ -5,9 +5,9 @@ import { guardarMuestra,actualizarMuestra,buscarMuestra,listarMuestras } from ".
 const muestraRoute = Router()
 
 muestraRoute.post("/registrar",guardarMuestra);
-muestraRoute.put("/actualizarMuestra/:id",actualizarMuestra);
-muestraRoute.get("/buscarMuestra/:id",buscarMuestra);
-muestraRoute.get("/listarMuestra",listarMuestras);
+muestraRoute.put("/actualizar/:id",actualizarMuestra);
+muestraRoute.get("/buscar/:id",buscarMuestra);
+muestraRoute.get("/listar",listarMuestras);
 
 
 

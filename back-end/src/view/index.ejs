@@ -1234,7 +1234,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>21</th>
+                    <th>17</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1268,10 +1268,8 @@
                     <td>
                         {
                             "fecha":"2022-09-09", <br>
-                            "nombre":"Fisica",<br>
                             "cantidad":15,<br>
                             "lotes_id":1,<br>
-                            "muestrascol":"prueba",<br>
                             "estado":"1",<br>
                             "variedades_id":"1"<br>
                         }
@@ -1300,7 +1298,7 @@
             </table>
         </div><br>
     
-        <h2>Obtener Usuario por ID</h2>
+        <h2>Buscar muestra por ID</h2>
         <div class="cont-2">
             <table>
                 <tr>
@@ -1309,15 +1307,15 @@
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
-                    <td>Obtener Usuario por ID</td>
+                    <td>Obtener muestra por ID</td>
                 </tr>
                 <tr>
                     <td>URL</td>
-                    <td>localhost:4000/usuarios/{id}</td>
+                    <td>http://localhost:4000/muestra/buscar/:id</td>
                 </tr>
                 <tr>
                     <td>Descripción</td>
-                    <td>Obtiene la información de un usuario específico utilizando su ID.</td>
+                    <td>Obtiene la información de una muestra en específico utilizando su ID.</td>
                 </tr>
                 <tr>
                     <td>Verbo HTTP</td>
@@ -1326,7 +1324,7 @@
                 <tr>
                     <td>Header</td>
                     <td>
-                        <br>Autorización Bearer TOKEN
+                        <br>
                     </td>
                 </tr>
                 <tr>
@@ -1337,18 +1335,25 @@
                     <td>Responde</td>
                     <td>
                         Status: 200 OK <br>
-                        BODY: {
-                            "id": 1,
-                            "nombre": "Nombre del Usuario",
-                            "email": "usuario@dominio.com",
-                            "rol": "Aprendiz/Instructor"
+                        BODY: 	{ <br>
+                            "id": 2,<br>
+                            "fecha_creacion": "2023-10-18T05:00:00.000Z",<br>
+                            "cantidad": 5,<br>
+                            "lote": "Pinitos",<br>
+                            "finca": "Los pinos",<br>
+                            "propietario": "Daniel  Cordoba Ruiz"<br>
+                        } <br>
+                        ERROR SERVIDOR<br>
+                        Status: 401<br>
+                        BODY:{<br>
+                            massage: "Error en listar la muestra :" <br>
                         }
                     </td>
                 </tr>
             </table>
         </div><br>
     
-        <h2>Actualizar Usuario</h2>
+        <h2>Actualizar Muestra</h2>
         <div class="cont-2">
             <table>
                 <tr>
@@ -1357,15 +1362,15 @@
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
-                    <td>Actualizar Usuario</td>
+                    <td>Actualizar Muestra</td>
                 </tr>
                 <tr>
                     <td>URL</td>
-                    <td>localhost:4000/usuarios/actualizar/{id}</td>
+                    <td>http://localhost:4000/muestra/actualizar/:id</td>
                 </tr>
                 <tr>
                     <td>Descripción</td>
-                    <td>Actualiza la información de un usuario utilizando su ID.</td>
+                    <td>Actualiza la información de una muestra utilizando su ID.</td>
                 </tr>
                 <tr>
                     <td>Verbo HTTP</td>
@@ -1375,7 +1380,7 @@
                     <td>Header</td>
                     <td>
                         <br>Autorización Bearer TOKEN<br>
-                        Content-Type application/json; charset=utf-8
+                        Content-Type application/json; 
                     </td>
                 </tr>
                 <tr>
@@ -1385,27 +1390,39 @@
                 <tr>
                     <td>Request body JSON</td>
                     <td>
-                        {
-                            "nombre": "Nuevo Nombre del Usuario",
-                            "email": "nuevo_usuario@dominio.com",
-                            "rol": "Instructor"
-                        }
+                        { <br>
+                            "fecha_creacion": "2023-10-18",<br>
+                            "cantidad":5,<br>
+                            "lotes_id":1,<br>
+                            "estado":"1",<br>
+                            "variedades_id":"1"<br>
+                        }	
                     </td>
                 </tr>
                 <tr>
                     <td>Responde</td>
                     <td>
                         Status: 200 OK <br>
-                        BODY: {
-                            "mensaje": "Actualización de usuario exitosa..!"
-                        }
+                        BODY: { <br>
+                            "mensaje": "La muestra se actuaizo con exito"<br>
+                        }<br>
+                        INCORRECTO<br>
+                        Status:401<br>
+                        BODY: {<br>
+                            "mensaje": "El usuario no fue actualizado"<br>
+                        }   <br>
+                        ERROR SERVIDOR<br>
+                        Status:500<br>
+                        BODY: {<br>
+                            "mensaje": "Error en el servidor"<br>
+                        } <br>
                     </td>
                 </tr>
             </table>
         </div>
         <br>
     
-        <h2>Eliminar Usuario</h2>
+        <h2>Listar Muestras</h2>
         
         <div class="cont-2">
             <table>
@@ -1415,43 +1432,50 @@
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
-                    <td>Eliminar Usuario</td>
+                    <td>Listar Muestras</td>
                 </tr>
                 <tr>
                     <td>URL</td>
-                    <td>localhost:4000/usuarios/eliminar/{id}</td>
+                    <td>http://localhost:4000/muestra/listar</td>
                 </tr>
                 <tr>
                     <td>Descripción</td>
-                    <td>Elimina un usuario utilizando su ID.</td>
+                    <td>Lista todos las muestras que se encuntren guardadas.</td>
                 </tr>
                 <tr>
                     <td>Verbo HTTP</td>
-                    <td>DELETE</td>
+                    <td>Get</td>
                 </tr>
                 <tr>
                     <td>Header</td>
                     <td>
-                        <br>Autorización Bearer TOKEN
+                        <br>
                     </td>
                 </tr>
                 <tr>
                     <td>Usuarios</td>
-                    <td>Instructor</td>
+                    <td>Instructor/Aprendiz</td>
                 </tr>
                 <tr>
                     <td>Responde</td>
                     <td>
                         Status: 200 OK <br>
-                        BODY: {
-                            "mensaje": "Eliminación de usuario exitosa..!"
+                        BODY: 	{ <br>
+                            "id": 2,<br>
+                            "fecha_creacion": "2023-10-18T05:00:00.000Z",<br>
+                            "cantidad": 5,<br>
+                            "lote": "Pinitos",<br>
+                            "finca": "Los pinos",<br>
+                            "propietario": "Daniel  Cordoba Ruiz"<br>
+                        } <br>
+                        Error Servidor<br>
+                        BODY: {<br>
+                            massage: "Error en listar la muestra :" <br>    
                         }
                     </td>
                 </tr>
             </table>
         </div>
-     
-
         <h1>Documentación API Usuarios</h1>
 
         <h2>Crear Usuario</h2>
@@ -1459,7 +1483,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>17</th>
+                    <th>21</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1515,7 +1539,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>18</th>
+                    <th>22</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1563,7 +1587,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>19</th>
+                    <th>23</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
@@ -1621,7 +1645,7 @@
             <table>
                 <tr>
                     <th>Número</th>
-                    <th>20</th>
+                    <th>24</th>
                 </tr>
                 <tr>
                     <td>Nombre del web service</td>
