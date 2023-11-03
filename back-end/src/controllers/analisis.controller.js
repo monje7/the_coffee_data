@@ -98,7 +98,7 @@ export const actualizarAnalisis = async (req, res) => {
 
         let sql = `UPDATE analisis SET calidad='${calidad}', factor_de_rendimiento='${factor_de_rendimiento}', proceso='${proceso}', muestras_id='${muestras_id}', usuarios_id ='${usuarios_id}', tipo_analisis_id='${tipo_analisis_id}', estado='${estado}', tipo_molienda='${tipo_molienda}', tipo_fermentacion='${tiempo_fermentacion}', densidad_cafe_verde='${densidad_cafe_verde}', fecha_de_procesamiento='${fecha_de_procesamiento}', tipo_tostion='${tipo_tostion}', tiempo_fermentacion='${tiempo_fermentacion}', actividad_de_agua='${actividad_de_agua}', tiempo_de_secado='${tiempo_de_secado}' WHERE  id =${id}`
     
-        // let sql = `update usuarios SET nombres ='${nombres}',direccion='${direccion}',telefono='${telefono}',correo ='${correo}' where  idusuario=${id}`;
+
 
         const [rows] = await pool.query(sql);
 
