@@ -6,9 +6,8 @@ export const guardarAnalisis = async (req,res)=>{
         let data = req.body;
         console.log('user',data);
         
-        let sql = 'insert into analisis(calidad,factor_de_rendimiento,proceso,muestras_id,usuarios_id,tipo_analisis_id,estado,tipo_molienda,tipo_fermentacion,densidad_cafe_verde,fecha_de_procesamiento,tipo_tostion,tiempo_fermentacion,actividad_de_agua,tiempo_de_secado) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-        const [rows] = await pool.query(sql,[data.calidad,data.factor_de_rendimiento,data.proceso,data.muestras_id,data.usuarios_id,data.tipo_analisis_id,data.estado,
-            data.tipo_molienda,data.tipo_fermentacion,data.densidad_cafe_verde,data.fecha_de_procesamiento,data.tipo_tostion,data.tiempo_fermentacion,data.actividad_de_agua,data.tiempo_de_secado]);
+        let sql = 'insert into analisis(fecha_analisis,calidad,proceso,muestras_id,usuarios_id,tipo_analisis_id) values (?,?,?,?,?,?)';
+        const [rows] = await pool.query(sql,[data.fecha,data.calidad,data.proceso,data.muestras_id,data.usuarios_id,data.tipo_analisis_id]);
 
         if(rows.affectedRows>0){
             res.status(200).json({
