@@ -6,8 +6,9 @@ export const guardarAnalisis = async (req,res)=>{
         let data = req.body;
         console.log('user',data);
         
-        let sql = 'insert into analisis(fecha_analisis,calidad,proceso,muestras_id,usuarios_id,tipo_analisis_id) values (?,?,?,?,?,?)';
-        const [rows] = await pool.query(sql,[data.fecha,data.calidad,data.proceso,data.muestras_id,data.usuarios_id,data.tipo_analisis_id]);
+        let sql = 'insert into analisis(calidad,factor_de_rendimiento,proceso,muestras_id,usuarios_id,tipo_analisis_id,estado,tipo_molienda,tipo_de_fermentacion,densidad_cafe_verde,fecha_de_procesamiento,tipo_tostion,tiempo_de_fermentacion,actividad_de_agua,tiempo_de_secado) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+        const [rows] = await pool.query(sql,[data.calidad,data.factor_de_rendimiento,data.proceso,data.muestras_id,data.usuarios_id,data.tipo_analisis_id,data.estado,
+            data.tipo_molienda,data.tipo_de_fermentacion,data.densidad_cafe_verde,data.fecha_de_procesamiento,data.tipo_tostion,data.tiempo_de_fermentacion,data.actividad_de_agua,data.tiempo_de_secado]);
 
         if(rows.affectedRows>0){
             res.status(200).json({
@@ -92,12 +93,12 @@ export const eliminaranalisis = async (req,res)=>{
 export const actualizarAnalisis = async (req, res) => {
     try {
         let id = req.params.id;
-        let { calidad,factor_de_rendimiento,proceso,muestras_id,usuarios_id,tipo_analisis_id,estado,tipo_molienda,tipo_fermentacion,densidad_cafe_verde,fecha_de_procesamiento,tipo_tostion,tiempo_fermentacion,actividad_de_agua,tiempo_de_secado} = req.body;
+        let { calidad,factor_de_rendimiento,proceso,muestras_id,usuarios_id,tipo_analisis_id,estado,tipo_molienda,tipo_de_fermentacion,densidad_cafe_verde,fecha_de_procesamiento,tipo_tostion,tiempo_de_fermentacion,actividad_de_agua,tiempo_de_secado} = req.body;
 
 
-        let sql = `UPDATE analisis SET calidad='${calidad}', factor_de_rendimiento='${factor_de_rendimiento}', proceso='${proceso}', muestras_id='${muestras_id}', usuarios_id ='${usuarios_id}', tipo_analisis_id='${tipo_analisis_id}', estado='${estado}', tipo_molienda='${tipo_molienda}', tipo_fermentacion='${tiempo_fermentacion}', densidad_cafe_verde='${densidad_cafe_verde}', fecha_de_procesamiento='${fecha_de_procesamiento}', tipo_tostion='${tipo_tostion}', tiempo_fermentacion='${tiempo_fermentacion}', actividad_de_agua='${actividad_de_agua}', tiempo_de_secado='${tiempo_de_secado}' WHERE  id =${id}`
+        let sql = `UPDATE analisis SET calidad='${calidad}', factor_de_rendimiento='${factor_de_rendimiento}', proceso='${proceso}', muestras_id='${muestras_id}', usuarios_id ='${usuarios_id}', tipo_analisis_id='${tipo_analisis_id}', estado='${estado}', tipo_molienda='${tipo_molienda}', tipo_de_fermentacion='${tipo_de_fermentacion}', densidad_cafe_verde='${densidad_cafe_verde}', fecha_de_procesamiento='${fecha_de_procesamiento}', tipo_tostion='${tipo_tostion}', tiempo_de_fermentacion='${tiempo_de_fermentacion}', actividad_de_agua='${actividad_de_agua}', tiempo_de_secado='${tiempo_de_secado}' WHERE  id =${id}`
     
-
+        // let sql = `update usuarios SET nombres ='${nombres}',direccion='${direccion}',telefono='${telefono}',correo ='${correo}' where  idusuario=${id}`;
 
         const [rows] = await pool.query(sql);
 
