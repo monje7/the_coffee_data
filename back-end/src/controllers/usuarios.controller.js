@@ -6,9 +6,9 @@
         let data = req.body;
         console.log("user",data);
 
-        let sql= 'INSERT INTO usuarios( fecha_creacion,nombre, apellido, numero_documentos,telefono, correo_electronico, user_password, tipo_documento, rol, cargo,estado) VALUES (?,?,?,?,?,?,?,?,?,?,?)';
+        let sql= 'INSERT INTO usuarios( fecha_creacion,nombre, apellido, numero_documentos,telefono, correo_electronico, user_password, tipo_documento, rol, cargo) VALUES (?,?,?,?,?,?,?,?,?,?)';
 
-        const [rows] = await pool.query(sql, [ data.fecha_creacion,data.nombre, data.apellido, data.documento, data.telefono,data.correo,data.contraseña,data.tipo_identificacion,data.rol,data.cargo,data.estado]); 
+        const [rows] = await pool.query(sql, [ data.fecha_creacion,data.nombre, data.apellido, data.documento, data.telefono,data.correo,data.contraseña,data.tipo_identificacion,data.rol,data.cargo]); 
         
         if (rows.affectedRows > 0) {
             res.status(200).json({
