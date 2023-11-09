@@ -31,10 +31,10 @@ export const buscarFinca= async (req,res)=>{
 export const guardarFinca= async (req, res) => {
 
     try{
-    let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id} =req.body;
+    let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda} =req.body;
 
-    let sql=`insert into fincas (fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id)
-            values ('${fecha_creacion	}','${nombre}','${longitud}','${latitud}','${usuarios_id}','${municipios_id}')`;
+    let sql=`insert into fincas (fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda)
+            values ('${fecha_creacion	}','${nombre}','${longitud}','${latitud}','${usuarios_id}','${municipios_id}','${noombre_vereda}')`;
 
     const [rows] = await pool.query(sql);
     
@@ -71,9 +71,9 @@ export const actualizarFinca=async (req, res) =>{
 
     try{
     let id = req.params.id;
-    let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id} = req.body;
+    let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda} = req.body;
 
-    let sql=`update fincas SET fecha_creacion='${fecha_creacion}',nombre='${nombre}',longitud='${longitud}',latitud='${latitud}',usuarios_id='${usuarios_id}',municipios_id='${municipios_id}'
+    let sql=`update fincas SET fecha_creacion='${fecha_creacion}',nombre='${nombre}',longitud='${longitud}',latitud='${latitud}',usuarios_id='${usuarios_id}',municipios_id='${municipios_id}',noombre_vereda='${noombre_vereda}'
             where id=${id}`;
 
     const [rows] = await pool.query(sql);

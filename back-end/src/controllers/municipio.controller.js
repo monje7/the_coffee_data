@@ -58,23 +58,6 @@ export const guardarmunicipio = async(req, res) => {
 }
 };
 
-export const eliminarmunicipio = async(req,res) => {
-    try{
-        let id= req.params.id;
-
-        let sql=`delete from municipios where id=${id}`;
-
-        const[rows]= await pool.query(sql);
-        if(rows.affectedRows>0){
-            res.status(200).json({"status":200, "message": "se elimino con exito"});
-        }else{
-            res.status(401).json({"status":401, "message": "No se elimino con exito"}); 
-        }
-    }catch(e){
-        res.status(500).json({"status":500, "message": "ERROR en el servidor"});
-    }
-
-};
 
 export const actualizarmunicipio = async(req,res) => {
     try {
