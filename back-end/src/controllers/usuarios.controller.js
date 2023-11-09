@@ -40,10 +40,7 @@
 export const listarUsuario = async (req, res) => {
 
     try {
-        let error= validationResult(req);
-        if (!error.isEmpty()) {
-            return res.status(400).json(error);
-        }
+        
         const [result] = await pool.query("select * from usuarios");
         res.status(200).json(result);
     } catch (err) {
