@@ -31,7 +31,7 @@ export const guardarResultado = async (req, res) => {
 export const buscarResultado = async (req, res) => {
     try {
         let id = req.params.id;
-        const [result] = await pool.query("SELECT * FROM resultados WHERE id = ?", [id]);
+        const [result] = await pool.query("SELECT r.valor, r.analisis_id AS Analisis, v.nombre AS variable,r.fecha_creacion FROM resultados AS r JOIN variables AS v ON r.variables_id = v.id WHERE analisis_id = ?", [id]);
         res.status(200).json(result);
     } catch (err) {
         res.status(500).json({
@@ -43,7 +43,7 @@ export const buscarResultado = async (req, res) => {
 
 export const listarResultados = async (req, res) => {
     try {
-        const [result] = await pool.query("SELECT * FROM resultados");
+        const [result] = await pool.query("SELECT r.valor, r.analisis_id AS Analisis, v.nombre AS variable,r.fecha_creacion FROM resultados AS r JOIN variables AS v ON r.variables_id = v.id;");
         res.status(200).json(result);
     } catch (err) {
         res.status(500).json({
@@ -83,11 +83,11 @@ export const eliminarResultado = async (req, res) => {
 export const actualizarResultado = async (req, res) => {
     try {
         let id = req.params.id;
-        let { valor, analisis_id, variables_id, estado } = req.body;
+        let { valor, analisis_id, variables_id, fecha_creacion } = req.body;
 
-        let sql = `UPDATE resultados SET valor = ?, analisis_id = ?, variables_id = ?, estado = ? WHERE id = ?`;
+        let sql = `UPDATE resultados SET valor = ?, analisis_id = ?, variables_id = ?, fecha_creacion = ? WHERE id = ?`;
 
-        const [rows] = await pool.query(sql, [valor, analisis_id, variables_id, estado, id]);
+        const [rows] = await pool.query(sql, [valor, analisis_id, variables_id, fecha_creacion, id]);
 
         if (rows.affectedRows > 0) {
             res.status(200).json({

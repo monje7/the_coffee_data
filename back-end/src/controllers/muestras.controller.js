@@ -6,9 +6,9 @@ export const guardarMuestra = async (req, res) => {
     try {
         let data = req.body;
 
-        let sql =  `INSERT INTO muestras( fecha_creacion, cantidad, cafes_id) VALUES (?,?,?)`
+        let sql =  `INSERT INTO muestras( fecha_creacion, cantidad, estado, cafes_id) VALUES (?,?,?,?)`
 
-        const [rows] = await pool.query(sql, [ data.fecha, data.cantidad,data.cafe_id ]); 
+        const [rows] = await pool.query(sql, [ data.fecha, data.cantidad,data.estado,data.cafe ]); 
         
         if (rows.affectedRows > 0) {
             res.status(200).json({
