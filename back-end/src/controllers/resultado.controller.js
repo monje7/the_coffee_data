@@ -6,7 +6,7 @@ export const guardarResultado = async (req, res) => {
         console.log('data', data);
 
         let sql = 'INSERT INTO resultados(valor, analisis_id, variables_id, fecha_creacion) VALUES (?, ?, ?, ?)';
-        const [rows] = await pool.query(sql, [data.valor, data.analisis_id, data.variables_id,data.fecha_creacion]);
+        const [rows] = await pool.query(sql, [data.valor, data.analisis_id, data.variables_id, data.fecha]);
 
         if (rows.affectedRows > 0) {
             res.status(200).json({

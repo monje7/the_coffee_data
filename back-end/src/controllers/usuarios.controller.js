@@ -1,39 +1,41 @@
  import { pool } from "../database/conexion.js";
-    export const guardarUsuario = async (req, res) => {
-        try {
-            let data = req.body;
-            console.log("user",data);
 
-            let sql= 'INSERT INTO usuarios( fecha_creacion,nombre, apellido, numero_documentos,telefono, correo_electronico, user_password, tipo_documento, rol, cargo,estado) VALUES (?,?,?,?,?,?,?,?,?,?,?)';
+ 
+ export const guardarUsuario = async (req, res) => {
+    try {
+        let data = req.body;
+        console.log("user",data);
 
-            const [rows] = await pool.query(sql, [ data.fecha_creacion,data.nombre, data.apellido, data.documento, data.telefono,data.correo,data.contraseña,data.tipo_identificacion,data.rol,data.cargo,data.estado]); 
-            
-            if (rows.affectedRows > 0) {
-                res.status(200).json({
-                    "status": 200,
-                    "message": "El usuario se registro con exito"   
-                }
-                );
+        let sql= 'INSERT INTO usuarios( fecha_creacion,nombre, apellido, numero_documentos,telefono, correo_electronico, user_password, tipo_documento, rol, cargo,estado) VALUES (?,?,?,?,?,?,?,?,?,?,?)';
 
-            } else {
-                res.status(400).json({
-                    "status": 400,
-                    "message": "No se registro"
-                }
-                );
-            }  
-
-
-
-        } catch (error) {
-            res.status(500).json({
-                "status": 500,
-                "message": "error en en el servidor" + error 
+        const [rows] = await pool.query(sql, [ data.fecha_creacion,data.nombre, data.apellido, data.documento, data.telefono,data.correo,data.contraseña,data.tipo_identificacion,data.rol,data.cargo,data.estado]); 
+        
+        if (rows.affectedRows > 0) {
+            res.status(200).json({
+                "status": 200,
+                "message": "El usuario se registro con exito"   
             }
             );
-            
+
+        } else {
+            res.status(400).json({
+                "status": 400,
+                "message": "No se registro"
+            }
+            );
+        }  
+
+
+
+    } catch (error) {
+        res.status(500).json({
+            "status": 500,
+            "message": "error en en el servidor" + error 
         }
-    };
+        );
+        
+    }
+};
 
 export const listarUsuario = async (req, res) => {
 

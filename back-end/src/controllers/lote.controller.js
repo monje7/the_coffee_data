@@ -34,10 +34,10 @@ export const guardarlote = async(req, res) => {
     //         return res.status(400).json(error);
     //     }
 
-    let {fecha_creacion,nombre,latitud,longitud,fincas_id ,variedades_id} = req.body;
+    let {fecha_creacion,nombre,latitud,longitud,fincas_id } = req.body;
 
-    let sql= `insert into lotes (fecha_creacion,nombre,latitud,longitud,fincas_id,variedades_id)
-                values('${fecha_creacion}','${nombre}','${latitud}','${longitud}','${fincas_id}','${variedades_id}')`;
+    let sql= `insert into lotes (fecha_creacion,nombre,latitud,longitud,fincas_id)
+                values('${fecha_creacion}','${nombre}','${latitud}','${longitud}','${fincas_id}')`;
 
     const [rows] = await pool.query(sql);
 
@@ -78,8 +78,8 @@ export const eliminarlote = async(req,res) => {
 export const actualizarlote = async(req,res) => {
     try {
         let id= req.params.id;
-        let {fecha_creacion,nombre,latitud,longitud,fincas_id ,variedades_id} = req.body;
-        let sql= `update lotes set fecha_creacion='${fecha_creacion}',nombre='${nombre}',latitud='${latitud}',longitud='${longitud}',fincas_id='${fincas_id}',variedades_id='${variedades_id}' where id='${id}'`;
+        let {fecha_creacion,nombre,latitud,longitud,fincas_id} = req.body;
+        let sql= `update lotes set fecha_creacion='${fecha_creacion}',nombre='${nombre}',latitud='${latitud}',longitud='${longitud}',fincas_id='${fincas_id}'' where id='${id}'`;
         const[rows] = await pool.query(sql);
         if(rows.affectedRows>0){
             res.status(200).json({"status":200, "message": "se actualizo con exito"});
