@@ -2,7 +2,7 @@
     import { check } from 'express-validator';
 
     import{buscarFinca,guardarFinca,actualizarFinca,desactivarFinca,listarFinca} from '../controllers/finca.controller.js';
-
+    // import { validartoken } from '../controllers/autenticacion.controller.js';
     const fincaRoute= Router();
 
     fincaRoute.get('/listar',listarFinca);

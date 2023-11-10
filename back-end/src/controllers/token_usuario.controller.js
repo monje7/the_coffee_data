@@ -14,12 +14,12 @@ export const guardartokenUsu = async(req, res) => {
     if (rows.affectedRows >0){
         res.status(200).json({
             "status":200,
-            "message":"se registro con exito el token usuario"
+            "message":"se registro con exito el token usuario!"
         })
     }else{
         res.status(401).json({
             "status":401,
-            "message":"no se registro con exito el token usuario"
+            "message":"no se registro con exito el token usuario!"
         })
     }
     }catch(e){

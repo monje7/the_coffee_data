@@ -66,16 +66,24 @@
             <tr>
                 <td>Responde</td>
                 <td>
-                    <br>
-                    {
-                    "tipo":"fisico",<br>
-                    "calidad":"excelente",<br>
-                    "proceso":"certificar",<br>
-                    "muestras_id":1,<br>
-                    "usuarios_id": 1,<br>
-                    "tipo_analisis_id":1,<br>
-                    "estado":""<br>
-                    }
+                    <br>{
+                        "calidad":"excelente",<br>
+                        "factor_de_rendimiento":66.4,<br>
+                        "proceso":"Practica",<br>
+                        "muestras_id":4,<br>
+                        "usuarios_id":1,<br>
+                        "tipo_analisis_id":1,<br>
+                        "estado":"",<br>
+                        "tipo_molienda":"Media",<br>
+                        "tipo_de_fermentacion":"No especifíca",<br>
+                        "densidad_cafe_verde":1,<br>
+                        "fecha_de_procesamiento":"2023-05-07",<br>
+                        "tipo_tostion":"Media",<br>
+                        "tiempo_de_fermentacion":"No especifíca",<br>
+                        "actividad_de_agua":"No reporta",<br>
+                        "tiempo_de_secado":"No especifíca"<br>
+                        <br>}
+               
                     <br>
                     <br>INCORRECTO <br>
                     Status:401 <br>
@@ -135,31 +143,41 @@
                 <td>
                     <br>
                     <br>
-                    "[
-                    {
-                    "id": 3,<br>
-                    "fecha_analisis": "2023-11-01T15:37:10.000Z",<br>
-                    "tipo": "Fisico",<br>
-                    "calidad": "execelente",<br>
-                    "proceso": "Practica",<br>
-                    "muestras_id": 1,<br>
-                    "usuarios_id": 1,<br>
-                    "tipo_analisis_id": 1,<br>
-                    "estado": 0<br>
-                    },<br>
+                    <br>{
+                        "calidad":"excelente",<br>
+                        "factor_de_rendimiento":66.4,<br>
+                        "proceso":"Practica",<br>
+                        "muestras_id":4,<br>
+                        "usuarios_id":1,<br>
+                        "tipo_analisis_id":1,<br>
+                        "estado":"",<br>
+                        "tipo_molienda":"Media",<br>
+                        "tipo_de_fermentacion":"No especifíca",<br>
+                        "densidad_cafe_verde":1,<br>
+                        "fecha_de_procesamiento":"2023-05-07",<br>
+                        "tipo_tostion":"Media",<br>
+                        "tiempo_de_fermentacion":"No especifíca",<br>
+                        "actividad_de_agua":"No reporta",<br>
+                        "tiempo_de_secado":"No especifíca"<br>
+                        <br>}
 
-                    <br>
-                    {
-                    "id": 4,<br>
-                    "fecha_analisis": "2023-11-01T22:16:49.000Z",<br>
-                    "tipo": "Fisico",<br>
-                    "calidad": "bueno",<br>
-                    "proceso": "Practica",<br>
-                    "muestras_id": 1,<br>
-                    "usuarios_id": 1,<br>
-                    "tipo_analisis_id": 1,<br>
-                    "estado": 0<br>
-                    }<br>
+                        <br>{
+                            "calidad":"excelente",<br>
+                            "factor_de_rendimiento":66.4,<br>
+                            "proceso":"Practica",<br>
+                            "muestras_id":4,<br>
+                            "usuarios_id":1,<br>
+                            "tipo_analisis_id":1,<br>
+                            "estado":"",<br>
+                            "tipo_molienda":"Media",<br>
+                            "tipo_de_fermentacion":"No especifíca",<br>
+                            "densidad_cafe_verde":1,<br>
+                            "fecha_de_procesamiento":"2023-05-07",<br>
+                            "tipo_tostion":"Media",<br>
+                            "tiempo_de_fermentacion":"No especifíca",<br>
+                            "actividad_de_agua":"No reporta",<br>
+                            "tiempo_de_secado":"No especifíca"<br>
+                            <br>}
 
                     <br>INCORRECTO <br>
                     Status:401 <br>
@@ -180,13 +198,13 @@
             </tr>
             <tr>
                 <td>Nombre del webservice</td>
-                <td>Buscar Usuarios</td>
+                <td>Buscar Analisis</td>
 
 
             </tr>
             <tr>
                 <td>URL</td>
-                <td>localhost:4000/analisis/buscar/4</td>
+                <td>localhost:4000/analisis/buscar/:id</td>
             </tr>
             <tr>
                 <td>Descripción</td>
@@ -218,16 +236,27 @@
                 <td>Responde</td>
                 <td>
                     <br>
+                    <br>[
                     {
-                    "id": 4,<br>
-                    "fecha_analisis": "2023-11-01T22:16:49.000Z",<br>
-                    "tipo": "Fisico",<br>
-                    "calidad": "bueno",<br>
-                    "proceso": "Practica",<br>
-                    "muestras_id": 1,<br>
-                    "usuarios_id": 1,<br>
-                    "estado": 0<br>
-                    <br> }
+                        "id": 7,
+                        "fecha_analisis": "2023-11-10T13:21:47.000Z",
+                        "calidad": "bueno",
+                        "factor_de_rendimiento": 96.4,
+                        "proceso": "practica",
+                        "muestras_id": 4,
+                        "usuarios_id": 1,
+                        "tipo_analisis_id": 1,
+                        "estado": 0,
+                        "tipo_molienda": "Media",
+                        "tipo_de_fermentacion": "No especifíca",
+                        "densidad_cafe_verde": 1,
+                        "fecha_de_procesamiento": "2023-05-07T05:00:00.000Z",
+                        "tipo_tostion": "Media",
+                        "tiempo_de_fermentacion": "No especifíca",
+                        "actividad_de_agua": "No reporta",
+                        "tiempo_de_secado": "No especifíca"
+                    }
+                ]
 
 
                     <br>Error Servidor <br>
@@ -256,7 +285,7 @@
             </tr>
             <tr>
                 <td>URl</td>
-                <td>localhost:4000/analisis/update/5</td>
+                <td>localhost:4000/analisis/update/:id</td>
             </tr>
             <tr>
                 <td>Descripción</td>
@@ -284,15 +313,7 @@
                 <td>CORRECTO <br>
                     <br>Status : 200 OK <br>
                     <br>BODY:{<br>
-                    {<br>
-                    "tipo":"fisico",<br>
-                    "calidad":"bueno",<br>
-                    "proceso":"certificar",<br>
-                    "muestras_id":1,<br>
-                    "usuarios_id": 1,<br>
-                    "tipo_analisis_id":1,<br>
-                    "estado":"" <br>
-                    }<br>
+              
 
                     <br> 'mensaje':'¡Registro de Analisis actualizado..! '
                     } <br>
