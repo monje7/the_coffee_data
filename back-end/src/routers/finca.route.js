@@ -5,7 +5,7 @@
 
     const fincaRoute= Router();
 
-   fincaRoute.get('/listar',listarFinca);
+    fincaRoute.get('/listar',listarFinca);
     fincaRoute.get('/buscar/:id',buscarFinca);
     fincaRoute.post('/registrar/',guardarFinca);
     fincaRoute.put('/actualizar/:id',actualizarFinca);
