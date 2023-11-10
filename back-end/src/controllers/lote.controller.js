@@ -79,7 +79,7 @@ export const actualizarlote = async(req,res) => {
     try {
         let id= req.params.id;
         let {fecha_creacion,nombre,latitud,longitud,fincas_id} = req.body;
-        let sql= `update lotes set fecha_creacion='${fecha_creacion}',nombre='${nombre}',latitud='${latitud}',longitud='${longitud}',fincas_id='${fincas_id}' where id='${id}'`;
+        let sql= `update lotes set fecha_creacion='${fecha_creacion}',nombre='${nombre}',latitud='${latitud}',longitud='${longitud}',fincas_id='${fincas_id}' where id=${id}`;
         const[rows] = await pool.query(sql);
         if(rows.affectedRows>0){
             res.status(200).json({"status":200, "message": "se actualizo con exito"});
@@ -94,18 +94,22 @@ export const actualizarlote = async(req,res) => {
 export const desactivarlote = async (req, res) => {
     try {
       let id=req.params.id;
+<<<<<<< HEAD
       let sql= `UPDATE lotes SET estado = 0 WHERE id = ${id}`;
+=======
+      let sql= `UPDATE lotes SET estado = "Desactivado" WHERE id = ${id}`;
+>>>>>>> devdcr
       const [rows] = await pool.query(sql);
       if(rows.affectedRows > 0) {
         return   res.status(200).json({
                               "status":200,
-                              "message":"se registro con exito el lote"
-                                 }
+                              "message":"se desactivo con exito el lote"
+                                }
                                 );
       }else{
         return    res.status(401).json({
                                 "status":401,
-                                "message":"no se registro con exito el lote"
+                                "message":"no se desactivo con exito el lote"
                                 }
                                 );
         }

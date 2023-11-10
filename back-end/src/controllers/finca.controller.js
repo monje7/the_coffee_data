@@ -34,17 +34,17 @@ export const guardarFinca= async (req, res) => {
     let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda} =req.body;
 
     let sql=`insert into fincas (fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda)
-            values ('${fecha_creacion	}','${nombre}','${longitud}','${latitud}','${usuarios_id}','${municipios_id}','${noombre_vereda}')`;
+            values ('${fecha_creacion}','${nombre}','${longitud}','${latitud}','${usuarios_id}','${municipios_id}','${noombre_vereda}')`;
 
     const [rows] = await pool.query(sql);
     
     if(rows.affectedRows > 0) {
     return   res.status(200).json({
-                          "status":200,
-                          "message":"se registro con exito la finca"
-                             }
+                        "status":200,
+                        "message":"se registro con exito la finca"
+                            }
                             );
-                              }
+                            }
     else{
     return    res.status(401).json({
                             "status":401,
