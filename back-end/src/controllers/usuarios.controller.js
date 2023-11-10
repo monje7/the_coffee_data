@@ -13,14 +13,14 @@
         if (rows.affectedRows > 0) {
             res.status(200).json({
                 "status": 200,
-                "message": "El usuario se registro con exito"   
+                "message": "El usuario se registro con exito!"   
             }
             );
 
         } else {
             res.status(400).json({
                 "status": 400,
-                "message": "No se registro"
+                "message": "No se registro el usuario!"
             }
             );
         }  
@@ -72,13 +72,13 @@ export const eliminarUsuario = async (req, res) => {
         if (rows.affectedRows > 0) {
             res.status(200).json({
                 "status": 200,
-                "message": "El usuario se elimino con exito"
+                "message": "El usuario se elimino con exito!"
             }
             );
         } else {
             res.status(400).json({
                 "status": 401,
-                "message": "El usuario no fue eliminado"
+                "message": "El usuario no fue eliminado!"
             }
             );
         }
@@ -107,13 +107,13 @@ export const actualizarUsuario = async (req, res) => {
         if (rows.affectedRows > 0) {
             res.status(200).json({
                 "status": 200,
-                "message": "El usuario se actuaizo con exito"
+                "message": "El usuario se actuaizo con exito!"
             }
             );
         } else {
             res.status(400).json({
                 "status": 400,
-                "message": "El usuario no fue actualizado"
+                "message": "El usuario no fue actualizado!"
 
             }
             );

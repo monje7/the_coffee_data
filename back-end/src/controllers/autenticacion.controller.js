@@ -4,13 +4,13 @@ import jwt from 'jsonwebtoken';
 
 export const validarusuario = async(req,res)=>{
     try {
-       let {numero_documentos,user_password}= req.body;
+    let {numero_documentos,user_password}= req.body;
     let sql=`select id,nombre,rol from usuarios where numero_documentos= '${numero_documentos}' and user_password = '${user_password}'`;
     const [rows]= await pool.query(sql);
 
     if (rows.length>0) {
-        let token=jwt.sign({user:rows},process.env.AUT_SECRET,{expiresIn:process.env.AUT_EXPIRE});
-        return res.status(200).json({token:token,messaje:"Usuario autorizado"});
+        let token=jwt.sign({user:rows},process.env.AUT_SECRET,{expiresIn:process.env.AUT_EXPIRET});
+        return res.status(200).json({token:token,message:"Usuario autorizado"});
         // res.status(200).json(rows);
 
     }else{
@@ -18,7 +18,7 @@ export const validarusuario = async(req,res)=>{
     }
 
     } catch (e) {
-        res.status(500).json({messaje:'error en el servidor'+e});
+        res.status(500).json({messaje:'error en el servidor : '+e});
     }
     
 };
@@ -42,3 +42,4 @@ export const validartoken = async(req,res,next)=>{
         return res.status(500).json({message: 'error en validartoken' +e});
     }
 };
+

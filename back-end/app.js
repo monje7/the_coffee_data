@@ -12,6 +12,7 @@ import variablesRoute from "./src/routers/variables.router.js";
 import cafeRoute from "./src/routers/cafe.router.js";
 import tokenRoute from "./src/routers/token_usuario.router.js";
 import tipoAnalisisRoute from "./src/routers/tipo_analisis.router.js";
+import autRoute from "./src/routers/autenticacion.router.js";
 
 
 const app = express();
@@ -31,7 +32,7 @@ app.use('/variable',variablesRoute);
 app.use('/cafe',cafeRoute);
 app.use('/token',tokenRoute);
 app.use('/tipoAnalisis',tipoAnalisisRoute)
-
+app.use('/validacion',autRoute)
 
 
 app.set ('view engine','ejs');
