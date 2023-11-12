@@ -7,7 +7,7 @@ import {validationResult} from 'express-validator';
 export const listarFinca= async (req,res)=>{
     try{
 
-        const[result]= await pool.query("select * from fincas");
+        const[result]= await pool.query("SELECT f.id, f.fecha_creacion, f.nombre, f.longitud, f.latitud, u.nombre as nombre_usuario, m.nombre as nombre_municipio, f.estado, f.noombre_vereda  from fincas f join usuarios u on u.id = f.usuarios_id join municipios m on m.id = f.municipios_id order by f.estado desc");
         res.status(200).json(result);
 
 
@@ -90,7 +90,7 @@ export const actualizarFinca=async (req, res) =>{
 export const desactivarFinca = async (req, res) => {
     try {
       let id=req.params.id;
-      let sql= `UPDATE fincas SET Estado = "Desactivado" WHERE id = ${id}`;
+      let sql= `UPDATE fincas SET estado = 0 WHERE id = ${id}`;
       const [rows] = await pool.query(sql);
       if(rows.affectedRows > 0) {
         return   res.status(200).json({
@@ -108,5 +108,28 @@ export const desactivarFinca = async (req, res) => {
     } catch (err) {
       console.error('Error en desactivarlote:', err);
       res.status(500).json({ mensaje: 'Error en desactivarlote: ' + err });
+    }
+  };
+  export const ActivarFinca = async (req, res) => {
+    try {
+      let id=req.params.id;
+      let sql= `UPDATE fincas SET estado = 1 WHERE id = ${id}`;
+      const [rows] = await pool.query(sql);
+      if(rows.affectedRows > 0) {
+        return   res.status(200).json({
+                              "status":200,
+                              "message":"se activo con exito la finca"
+                                 }
+                                );
+      }else{
+        return    res.status(401).json({
+                                "status":401,
+                                "message":"no se activo con exito la finca"
+                                }
+                                );
+        }
+    } catch (err) {
+      console.error('Error en activarlote:', err);
+      res.status(500).json({ mensaje: 'Error en activarlote: ' + err });
     }
   };

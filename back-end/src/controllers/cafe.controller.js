@@ -3,6 +3,20 @@
 import {pool} from '../database/conexion.js';
 import {validationResult} from 'express-validator';
 
+export const listarcafe= async (req,res)=>{
+    try{
+  
+        const[result]= await pool.query("select c.id, c.estado, l.nombre as numero_lote, v.nombre as nombre_variedad from cafes c join lotes l on l.id = c.lotes_id join variedades v on v.id = c.variedades_id order by c.estado desc");
+        res.status(200).json(result);
+  
+  
+    }catch(err){
+        res.status(500).json({ message:'erro en listarCafe: '+err});
+    }
+  };
+
+
+
 
 export const buscarCafe= async (req,res)=>{ 
     try{
@@ -77,7 +91,7 @@ export const actualizarCafe=async (req, res) =>{
 export const estadoCafe = async (req, res) => {
     try {
       let id=req.params.id;
-      let sql= `UPDATE cafes SET Estado = "Desactivado" WHERE id = ${id}`;
+      let sql= `UPDATE cafes SET estado = 0 WHERE id = ${id}`;
       const [rows] = await pool.query(sql);
       if(rows.affectedRows > 0) {
         return   res.status(200).json({
@@ -95,5 +109,28 @@ export const estadoCafe = async (req, res) => {
     } catch (err) {
       console.error('Error en estadoCafe:', err);
       res.status(500).json({ mensaje: 'Error en estadoCafe: ' + err });
+    }
+  };
+  export const ActivarCafe = async (req, res) => {
+    try {
+      let id=req.params.id;
+      let sql= `UPDATE cafes SET estado = 1 WHERE id = ${id}`;
+      const [rows] = await pool.query(sql);
+      if(rows.affectedRows > 0) {
+        return   res.status(200).json({
+                              "status":200,
+                              "message":"se activo con exito el cafe"
+                                 }
+                                );
+      }else{
+        return    res.status(401).json({
+                                "status":401,
+                                "message":"no se activo con exito el cafe"
+                                }
+                                );
+        }
+    } catch (err) {
+      console.error('Error en ActivarCafe:', err);
+      res.status(500).json({ mensaje: 'Error en ActivarCafe: ' + err });
     }
   };

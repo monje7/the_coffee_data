@@ -5,7 +5,7 @@ import {validationResult} from 'express-validator';
 export const listarlote= async (req,res)=>{
     try{
 
-        const[result]= await pool.query("select * from lotes");
+        const[result]= await pool.query("select l.id, l.fecha_creacion, l.nombre, l.latitud, l.longitud, f.nombre as Nombre_Finca, l.estado from lotes l join fincas f on f.id = l.fincas_id order by l.estado desc");
         res.status(200).json(result);
 
 
@@ -94,11 +94,7 @@ export const actualizarlote = async(req,res) => {
 export const desactivarlote = async (req, res) => {
     try {
       let id=req.params.id;
-<<<<<<< HEAD
       let sql= `UPDATE lotes SET estado = 0 WHERE id = ${id}`;
-=======
-      let sql= `UPDATE lotes SET estado = "Desactivado" WHERE id = ${id}`;
->>>>>>> devdcr
       const [rows] = await pool.query(sql);
       if(rows.affectedRows > 0) {
         return   res.status(200).json({
@@ -116,5 +112,28 @@ export const desactivarlote = async (req, res) => {
     } catch (err) {
       console.error('Error en desactivarlote:', err);
       res.status(500).json({ mensaje: 'Error en desactivarlote: ' + err });
+    }
+  };
+  export const Activarlote = async (req, res) => {
+    try {
+      let id=req.params.id;
+      let sql= `UPDATE lotes SET estado = 1 WHERE id = ${id}`;
+      const [rows] = await pool.query(sql);
+      if(rows.affectedRows > 0) {
+        return   res.status(200).json({
+                              "status":200,
+                              "message":"se Activo con exito el lote"
+                                }
+                                );
+      }else{
+        return    res.status(401).json({
+                                "status":401,
+                                "message":"no se activo con exito el lote"
+                                }
+                                );
+        }
+    } catch (err) {
+      console.error('Error en activarlote:', err);
+      res.status(500).json({ mensaje: 'Error en activarlote: ' + err });
     }
   };

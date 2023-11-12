@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { buscarlote, listarlote, guardarlote, eliminarlote, actualizarlote, desactivarlote } from "../controllers/lote.controller.js";
+import { buscarlote, listarlote, guardarlote, eliminarlote, actualizarlote, desactivarlote, Activarlote } from "../controllers/lote.controller.js";
 // import { validartoken } from "../controllers/autenticacion.controller.js";
 // import {validatorUser} from '../validator/usuario.js';
 
@@ -16,5 +16,7 @@ loteRoute.delete('/Eliminar/:id',eliminarlote);
 loteRoute.put('/Actualizar/:id',actualizarlote);
 
 loteRoute.patch('/Desactivar/:id',desactivarlote);
+
+loteRoute.patch('/activar/:id',Activarlote);
 
 export default  loteRoute;
