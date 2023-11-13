@@ -6,7 +6,7 @@ import {validationResult} from 'express-validator';
 export const listarmunicipio= async (req,res)=>{
     try{
 
-        const[result]= await pool.query("select * from municipios");
+        const[result]= await pool.query("select m.id, m.nombre, d.nombre as nombre_departamento, m.fecha_creacion from municipios m join departamentos d on d.id = m.departamentos_id");
         res.status(200).json(result);
 
 
@@ -37,8 +37,8 @@ export const guardarmunicipio = async(req, res) => {
 
     let {nombre} = req.body;
 
-    let sql= `insert into municipios (nombre)
-                values('${nombre}')`;
+    let sql= `insert into municipios (nombre,fecha_creacion,departamentos_id)
+                values('${nombre}','${fecha_creacion}','${departamentos_id}')`;
 
     const [rows] = await pool.query(sql);
 
@@ -63,7 +63,7 @@ export const actualizarmunicipio = async(req,res) => {
     try {
         let id= req.params.id;
         let {nombre} = req.body;
-        let sql= `update municipios set nombre='${nombre}' where id='${id}'`;
+        let sql= `update municipios set nombre='${nombre}',fecha_creacion='${fecha_creacion}',departamentos_id='${departamentos_id}' where id='${id}'`;
         const[rows] = await pool.query(sql);
         if(rows.affectedRows>0){
             res.status(200).json({"status":200, "message": "se actualizo con exito"});
