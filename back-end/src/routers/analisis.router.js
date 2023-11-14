@@ -6,7 +6,7 @@ import { validartoken } from "../controllers/autenticacion.controller.js";
 const analisisRoute = Router();
 
 
-analisisRoute.post("/registrar",validartoken,guardarAnalisis);
+analisisRoute.post("/registrar",guardarAnalisis);
 analisisRoute.get("/listar",listarAnalisis);
 analisisRoute.get("/buscar/:id",buscaranalisis);
 analisisRoute.put("/update/:id",actualizarAnalisis);
