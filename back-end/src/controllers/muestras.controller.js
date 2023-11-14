@@ -147,7 +147,7 @@ export const activarMuestra = async (req,res) =>{
         if(rows.changedRows == 0){
             res.status(200).json({
                 "status": 200,
-                "message": "La muestras ya se encuentra activa con exito" 
+                "message": "La muestras ya se encuentra activa " 
             }
             );
         }
@@ -176,6 +176,4 @@ export const activarMuestra = async (req,res) =>{
         );
         
     }
-
-    
 }

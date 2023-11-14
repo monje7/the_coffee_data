@@ -47,7 +47,7 @@ export const buscaranalisis = async (req, res) => {
 
 export const listarAnalisis = async(req,res)=>{
     try{
-            const[result]=await pool.query(`select * from analisis`);
+            const[result]=await pool.query(`select * from analisis order by estado desc`);
             res.status(200).json(result);
     
         }catch(err){
@@ -58,34 +58,86 @@ export const listarAnalisis = async(req,res)=>{
 };
 
 
-export const eliminaranalisis = async (req,res)=>{
+export const desactivarAnalisis = async (req,res) =>{
+    try {
+        let id = req.params.id; 
+        let sql = `update analisis set estado = 0 where id=${id}`
 
-    try{
-        let id = req.params.id;
-        let sql = `delete from analisis where id=${id}`;
+        const [rows] = await pool.query(sql); 
 
-
-        const [rows] = await pool.query(sql);
-
-        if(rows.affectedRows>0)
-        {
+        if(rows.changedRows == 0){
             res.status(200).json({
-                "status":200,
-                "message":"El analisis se elimino con exito"
-            });
-        }else{
-            res.status(400).json({
-                "status":401,
-                "message":" El analisis no fue eliminado"
-            });
+                "status": 100,
+                "message": "El analisis ya esta desactivada"
+            }
+            );
         }
-    }catch(e){
+        else if(rows.changedRows >= 1){
+        
+        if (rows.affectedRows > 0) {
+            res.status(200).json({
+                "status": 200,
+                "message": "El analisis se desactivo con exito"  
+            }
+            );
+        } else {
+            res.status(401).json({
+                "status": 401,
+                "message": "El analisis no se desactivo"
+            }
+            );
+        }
+    }  
+    } catch (error) {
         res.status(500).json({
-            "status":500,
-            "message":"Error en el servidor"+e
-        });
+            "status": 500,
+            "message": "error en en el servidor" + error
+        }
+        );
+        
     }
-};
+}
+
+export const activarAnalisis = async (req,res) =>{
+    try {
+        let id = req.params.id; 
+        let sql = `update analisis set estado = 1 where id=${id}`
+
+        const [rows] = await pool.query(sql); 
+
+        if(rows.changedRows == 0){
+            res.status(200).json({
+                "status": 200,
+                "message": "El analisis ya se encuentra activa " 
+            }
+            );
+        }
+        else if(rows.changedRows >= 1){
+
+        
+        if (rows.affectedRows > 0) {
+            res.status(200).json({
+                "status": 200,
+                "message": "El analisis se activo con exito" 
+            }
+            );
+        } else {
+            res.status(401).json({
+                "status": 401,
+                "message": "El analisis no se activo"
+            }
+            );
+        }
+    }  
+    } catch (error) {
+        res.status(500).json({
+            "status": 500,
+            "message": "error en en el servidor" + error
+        }
+        );
+        
+    }
+}
 
 export const actualizarAnalisis = async (req, res) => {
     try {
