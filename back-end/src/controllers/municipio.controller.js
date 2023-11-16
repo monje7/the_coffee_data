@@ -17,6 +17,11 @@ export const listarmunicipio= async (req,res)=>{
 
 export const buscarmunicipio= async (req,res)=>{
     try{
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
+        
         let id=req.params.id;
 
         const[result]= await pool.query("select * from municipios where id= "+ id);
@@ -35,7 +40,7 @@ export const guardarmunicipio = async(req, res) => {
             return res.status(400).json(error);
         }
 
-    let {nombre} = req.body;
+    let {nombre,fecha_creacion,departamentos_id} = req.body;
 
     let sql= `insert into municipios (nombre,fecha_creacion,departamentos_id)
                 values('${nombre}','${fecha_creacion}','${departamentos_id}')`;
@@ -62,7 +67,7 @@ export const guardarmunicipio = async(req, res) => {
 export const actualizarmunicipio = async(req,res) => {
     try {
         let id= req.params.id;
-        let {nombre} = req.body;
+        let {nombre,fecha_creacion,departamentos_id} = req.body;
         let sql= `update municipios set nombre='${nombre}',fecha_creacion='${fecha_creacion}',departamentos_id='${departamentos_id}' where id='${id}'`;
         const[rows] = await pool.query(sql);
         if(rows.affectedRows>0){

@@ -1,12 +1,15 @@
 import { pool } from "../database/conexion.js";
-
+import { validationResult } from "express-validator";
 
 
 export const guardarMuestra = async (req, res) => {
     try {
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
         let data = req.body;
 
-         
         let sql = `INSERT INTO muestras ( fecha_creacion, codigo_externo, consecutivo_informe,muestreo, preparacion_muestra, cantidad, tipo_molienda, tipo_fermentacion, densidad_cafe_verde, fecha_procesamiento, tipo_tostion, tiempo_fermentacion, codigo_muestra, actividad_agua, tiempo_secado, presentacion, estado, cafes_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
         const [rows] = await pool.query(sql, [ data.fecha_creacion,data.codigo_externo,data.consecutivo_informe,data.muestreo,data.preparacion_muestra,data.cantidad,data.tipo_molienda,data.tipo_fermentacion,data.densidad_cafe_verde,data.fecha_procesamiento,data.tipo_tostion,data.tiempo_fermentacion,data.codigo_muestra,data.actividad_agua,data.tiempo_secado,data.presentacion,data.estado,data.cafes_id ]); 
@@ -35,6 +38,10 @@ export const guardarMuestra = async (req, res) => {
 }
 export const actualizarMuestra = async (req, res) => {
     try {
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
         let id = req.params.id;
         // let { fecha_creacion, cantidad,lotes_id} = req.body;
         let data = req.body;

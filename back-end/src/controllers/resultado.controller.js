@@ -1,7 +1,12 @@
 import {pool} from '../database/conexion.js';
+import { validationResult } from 'express-validator';
 
 export const guardarResultado = async (req, res) => {
     try {
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
         let data = req.body;
         console.log('data', data);
 
@@ -82,6 +87,10 @@ export const eliminarResultado = async (req, res) => {
 
 export const actualizarResultado = async (req, res) => {
     try {
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
         let id = req.params.id;
         let { valor, analisis_id, variables_id, fecha_creacion } = req.body;
 

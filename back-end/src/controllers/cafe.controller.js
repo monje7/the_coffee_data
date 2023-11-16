@@ -32,6 +32,10 @@ export const buscarCafe= async (req,res)=>{
 export const guardarCafe= async (req, res) => {
 
     try{
+      let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
     let {lotes_id,variedades_id} =req.body;
 
     let sql=`insert into cafes (lotes_id,variedades_id)
@@ -43,7 +47,7 @@ export const guardarCafe= async (req, res) => {
     return   res.status(200).json({
                           "status":200,
                           "message":"se registro con exito el cafe"
-                             }
+                            }
                             );
                               }
     else{
@@ -69,8 +73,11 @@ return    res.status(500).json({
 
 export const actualizarCafe=async (req, res) =>{
 
-
     try{
+      let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
     let id = req.params.id;
     let {lotes_id,variedades_id}  = req.body;
 

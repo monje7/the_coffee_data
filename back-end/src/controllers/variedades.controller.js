@@ -19,6 +19,10 @@ export const listarVariedad= async (req,res)=>{
 export const guardarVariedad= async (req, res) => {
 
     try{
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
     let {fecha_creacion	,nombre} =req.body;
 
     let sql=`insert into variedades (fecha_creacion,nombre)
@@ -58,6 +62,10 @@ export const actualizarVariedad=async (req, res) =>{
 
 
     try{
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
     let id = req.params.id;
     let {fecha_creacion	,nombre,estado} = req.body;
 

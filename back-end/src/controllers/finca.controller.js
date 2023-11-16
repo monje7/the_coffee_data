@@ -19,6 +19,7 @@ export const listarFinca= async (req,res)=>{
 
 export const buscarFinca= async (req,res)=>{ 
     try{
+      
         let id=req.params.id;
          const [result] = await pool.query('select * from fincas where id= '+id);
         res.status(200).json(result);
@@ -31,6 +32,10 @@ export const buscarFinca= async (req,res)=>{
 export const guardarFinca= async (req, res) => {
 
     try{
+      let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
     let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda} =req.body;
 
     let sql=`insert into fincas (fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda)
@@ -70,6 +75,10 @@ export const actualizarFinca=async (req, res) =>{
 
 
     try{
+      let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        } 
     let id = req.params.id;
     let {fecha_creacion	,nombre,longitud,latitud,usuarios_id,municipios_id,noombre_vereda} = req.body;
 

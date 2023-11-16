@@ -1,8 +1,12 @@
- import { pool } from "../database/conexion.js";
-
+import { pool } from "../database/conexion.js";
+import { validationResult } from "express-validator";
  
  export const guardarUsuario = async (req, res) => {
     try {
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
         let data = req.body;
         console.log("user",data);
 
@@ -92,6 +96,10 @@ export const eliminarUsuario = async (req, res) => {
 };
 export const actualizarUsuario = async (req, res) => {
     try {
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
         let id = req.params.id;
         let { nombre, apellido, documento, telefono,correo,contraseña,tipo_identificacion,rol,cargo} = req.body;
 
