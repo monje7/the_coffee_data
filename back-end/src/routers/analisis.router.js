@@ -6,12 +6,12 @@ import { validarAnalisis } from "../validation/analisis.validator.js";
 const analisisRoute = Router();
 
 
-analisisRoute.post("/registrar",validarAnalisis,guardarAnalisis);
+analisisRoute.post("/registrar",validartoken,validarAnalisis,guardarAnalisis);
 analisisRoute.get("/listar",listarAnalisis);
 analisisRoute.get("/buscar/:id",buscaranalisis);
-analisisRoute.put("/update/:id",validarAnalisis,actualizarAnalisis);
-analisisRoute.patch("/desactivar/:id",desactivarAnalisis);
-analisisRoute.patch("/activar/:id",activarAnalisis);
+analisisRoute.put("/update/:id",validartoken,validarAnalisis,actualizarAnalisis);
+analisisRoute.patch("/desactivar/:id",validartoken,desactivarAnalisis);
+analisisRoute.patch("/activar/:id",validartoken,activarAnalisis);
 
 
 export default analisisRoute;   
