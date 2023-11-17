@@ -2223,51 +2223,112 @@
         </div>
         <br>
 
-        <h2>Eliminar Usuario</h2>
+        
+<h2>Desactivar Usuario</h2>
+<div class="cont-2">
+    <table>
+        <tr>
+            <th>Número</th>
+            <th>32</th>
+        </tr>
+        <tr>
+            <td>Nombre del web service</td>
+            <td>Desactivar Usuario</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>localhost:4000/usuarios/desactivar/{id}</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>Desactiva un usuario utilizando su ID.</td>
+        </tr>
+        <tr>
+            <td>Verbo HTTP</td>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <td>Header</td>
+            <td>
+                <br>Autorización Bearer TOKEN
+            </td>
+        </tr>
+        <tr>
+            <td>Usuarios</td>
+            <td>Instructor</td>
+        </tr>
+        <tr>
+            <td>Request body JSON</td>
+            <td>
+                {
+                "activo": false
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Responde</td>
+            <td>
+                Status: 200 OK <br>
+                BODY: {
+                "mensaje": "Desactivación de usuario exitosa..!"
+                }
+            </td>
+        </tr>
+    </table>
+</div>
 
-        <div class="cont-2">
-            <table>
-                <tr>
-                    <th>Número</th>
-                    <th>32</th>
-                </tr>
-                <tr>
-                    <td>Nombre del web service</td>
-                    <td>Eliminar Usuario</td>
-                </tr>
-                <tr>
-                    <td>URL</td>
-                    <td>localhost:4000/usuarios/eliminar/{id}</td>
-                </tr>
-                <tr>
-                    <td>Descripción</td>
-                    <td>Elimina un usuario utilizando su ID.</td>
-                </tr>
-                <tr>
-                    <td>Verbo HTTP</td>
-                    <td>DELETE</td>
-                </tr>
-                <tr>
-                    <td>Header</td>
-                    <td>
-                        <br>Autorización Bearer TOKEN
-                    </td>
-                </tr>
-                <tr>
-                    <td>Usuarios</td>
-                    <td>Instructor</td>
-                </tr>
-                <tr>
-                    <td>Responde</td>
-                    <td>
-                        Status: 200 OK <br>
-                        BODY: {
-                        "mensaje": "Eliminación de usuario exitosa..!"
-                        }
-                    </td>
-                </tr>
-            </table>
-        </div>
+<h2>Activar Usuario</h2>
+<div class="cont-2">
+    <table>
+        <tr>
+            <th>Número</th>
+            <th>33</th>
+        </tr>
+        <tr>
+            <td>Nombre del web service</td>
+            <td>Activar Usuario</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>localhost:4000/usuarios/activar/{id}</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>Activa un usuario utilizando su ID.</td>
+        </tr>
+        <tr>
+            <td>Verbo HTTP</td>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <td>Header</td>
+            <td>
+                <br>Autorización Bearer TOKEN
+            </td>
+        </tr>
+        <tr>
+            <td>Usuarios</td>
+            <td>Instructor</td>
+        </tr>
+        <tr>
+            <td>Request body JSON</td>
+            <td>
+                {
+                "activo": true
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Responde</td>
+            <td>
+                Status: 200 OK <br>
+                BODY: {
+                "mensaje": "Activación de usuario exitosa..!"
+                }
+            </td>
+        </tr>
+    </table>
+</div>
         <h1>Cafe</h1>
         <div class="cont-2">
             <table>
