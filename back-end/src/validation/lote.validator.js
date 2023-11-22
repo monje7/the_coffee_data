@@ -1,12 +1,12 @@
-import { check, body } from "express-validator";
+import { check } from "express-validator";
 
-export const validarFinca = [
+export const validarLote = [
   check('fecha_creacion')
-    .notEmpty().withMessage('Ingrese una fecha válida en el formato año-mes-dia')
-    .matches(/^\d{4}-\d{2}-\d{2}$/).withMessage('Ingrese una fecha válida en el formato año-mes-dia'),
+    .notEmpty().withMessage('Ingrese una fecha válida en el formato año-mes-día')
+    .matches(/^\d{4}-\d{2}-\d{2}$/).withMessage('Ingrese una fecha válida en el formato año-mes-día'),
 
   check('nombre')
-    .notEmpty().withMessage('Esta casilla no puede estar vacía'),
+    .notEmpty().withMessage('Este campo no puede estar vacío'),
 
   check('longitud')
     .notEmpty().withMessage('Esta casilla no puede estar vacía'),
@@ -14,16 +14,8 @@ export const validarFinca = [
   check('latitud')
     .notEmpty().withMessage('Esta casilla no puede estar vacía'),
 
-  body('usuarios_id')
-    .notEmpty().withMessage('Ingrese un ID válido')
-    .isNumeric().withMessage('Ingrese un ID válido')
-    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0'),
-
-  body('municipios_id')
-    .notEmpty().withMessage('Ingrese un ID válido')
-    .isNumeric().withMessage('Ingrese un ID válido')
-    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0'),
-
-  check('noombre_vereda')
-    .notEmpty().withMessage('Esta casilla no puede estar vacía'),
+  check('fincas_id')
+    .isNumeric().withMessage('Ingrese un ID válido, mayor a 0')
+    .custom(value => value > 0).withMessage('Ingrese un ID válido, mayor a 0')
+    .notEmpty().withMessage('Este campo no puede estar vacío'),
 ];
