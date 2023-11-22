@@ -1,12 +1,30 @@
 import { check } from "express-validator";
 
-export const validarAnalisis=[
-    check('fecha_analisis','Ingrese una fecha válida en el formato año-mes-dia').matches(/^\d{4}-\d{2}-\d{2}$/).notEmpty(),
-    check('calidad','Ingrese una calidad valida.Valores validos: bueno,muy bueno,excelente,extraordinario').matches(/^(bueno|muy bueno|excelente|extraordinario)$/).notEmpty(),
-    check('estado','Ingrese un valor entre 0 y 1').matches(/^(0|1)$/).notEmpty(),
-    check('tipo_analisis_id','Ingrese un ID valido,el valor recomendado es 1').isNumeric().custom(value=>value>0).notEmpty(),
-    check('muestras_id','Ingrese un ID valido,mayor a 0').isNumeric().custom(value=>value>0).notEmpty(),
-    check('usuarios_id','Ingrese un ID valido,mayor a 0').isNumeric().custom(value=>value>0).notEmpty()
+export const validarAnalisis = [
+  check('fecha_analisis')
+    .notEmpty().withMessage('Ingrese una fecha válida en el formato año-mes-dia')
+    .matches(/^\d{4}-\d{2}-\d{2}$/).withMessage('Ingrese una fecha válida en el formato año-mes-dia'),
 
+  check('calidad')
+    .notEmpty().withMessage('Ingrese una calidad válida')
+    .matches(/^(bueno|muy bueno|excelente|extraordinario)$/).withMessage('Ingrese una calidad válida: bueno, muy bueno, excelente o extraordinario'),
 
-]
+  check('estado')
+    .notEmpty().withMessage('Ingrese un valor entre 0 y 1')
+    .isIn(['0', '1']).withMessage('Ingrese un valor válido: 0 o 1'),
+
+  check('tipo_analisis_id')
+    .notEmpty().withMessage('Ingrese un ID válido')
+    .isNumeric().withMessage('Ingrese un ID válido')
+    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0'),
+
+  check('muestras_id')
+    .notEmpty().withMessage('Ingrese un ID válido')
+    .isNumeric().withMessage('Ingrese un ID válido')
+    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0'),
+
+  check('usuarios_id')
+    .notEmpty().withMessage('Ingrese un ID válido')
+    .isNumeric().withMessage('Ingrese un ID válido')
+    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0')
+];

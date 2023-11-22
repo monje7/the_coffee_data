@@ -1,8 +1,13 @@
 import { check } from "express-validator";
 
 export const validarCafe = [
+  check('lotes_id')
+    .notEmpty().withMessage('Ingrese un ID válido')
+    .isNumeric().withMessage('Ingrese un ID válido')
+    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0'),
 
-    check('lotes_id','Ingrese un ID valido,mayor a 0').isNumeric().custom(value=>value>0).notEmpty(),
-    check('variedades_id','Ingrese un ID valido,mayor a 0').isNumeric().custom(value=>value>0).notEmpty()
-
-]
+  check('variedades_id')
+    .notEmpty().withMessage('Ingrese un ID válido')
+    .isNumeric().withMessage('Ingrese un ID válido')
+    .custom(value => value > 0).withMessage('Ingrese un ID válido mayor a 0')
+];
