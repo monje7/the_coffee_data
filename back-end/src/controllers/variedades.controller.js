@@ -81,4 +81,21 @@ export const actualizarVariedad=async (req, res) =>{
     }catch(e){
         res.status(500).json({"status":500,"message":"error en el servidor:" +e});
             }
-}
+};
+export const buscarvariedad= async (req,res)=>{
+    try{
+        let error1 = validationResult(req);
+        if (!error1.isEmpty()){
+            return res.status(400).json(error1);
+        }
+        
+        let id=req.params.id;
+
+        const[result]= await pool.query("select * from variedades where id= "+ id);
+        res.status(200).json(result[0]);
+
+
+    }catch(err){
+        res.status(500).json({ message:'erro en listarvariedad: '+err});
+    }
+};
