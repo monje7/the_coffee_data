@@ -3,7 +3,7 @@ import { check } from "express-validator";
 export const validatorUsuario = [
   check('nombre')
     .notEmpty().withMessage('Ingrese un nombre con mínimo 4 caracteres y máximo 10')
-    .isLength({ min: 4, max: 20 }),
+    .isLength({ min: 10, max: 50 }),
 
   check('apellido')
     .notEmpty().withMessage('Ingrese un apellido con mínimo 4 caracteres y máximo 10')

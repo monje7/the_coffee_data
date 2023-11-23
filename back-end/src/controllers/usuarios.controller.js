@@ -66,34 +66,7 @@ export const buscarUsuarios = async (req, res) => {
 
 };
 
-export const eliminarUsuario = async (req, res) => {
-    try {
-        let id = req.params.id;
-        let sql = `delete from usuarios where id=${id}`;
 
-        const [rows] = await pool.query(sql);
-
-        if (rows.affectedRows > 0) {
-            res.status(200).json({
-                "status": 200,
-                "message": "El usuario se elimino con exito!"
-            }
-            );
-        } else {
-            res.status(400).json({
-                "status": 401,
-                "message": "El usuario no fue eliminado!"
-            }
-            );
-        }
-    } catch (e) {
-        res.status(500).json({
-            "status": 500,
-            "message": "Error en el servidor " + e
-        }
-        );
-    }
-};
 export const actualizarUsuario = async (req, res) => {
     try {
         let error1 = validationResult(req);
@@ -135,3 +108,50 @@ export const actualizarUsuario = async (req, res) => {
 
     }
 };
+
+export const desactivarUsuario = async (req, res) => {
+    try {
+      let id=req.params.id;
+      let sql= `UPDATE usuarios SET estado = 0 WHERE id = ${id}`;
+      const [rows] = await pool.query(sql);
+      if(rows.affectedRows > 0) {
+        return   res.status(200).json({
+                              "status":200,
+                              "message":"se desactivo con exito el usuario"
+                                }
+                                );
+      }else{
+        return    res.status(401).json({
+                                "status":401,
+                                "message":"no se desactivo con exito el usuario"
+                                }
+                                );
+        }
+    } catch (err) {
+      console.error('Error en desactivarUsuario:', err);
+      res.status(500).json({ mensaje: 'Error en desactivarUsuario: ' + err });
+    }
+  };
+  export const ActivarUsuario = async (req, res) => {
+    try {
+      let id=req.params.id;
+      let sql= `UPDATE usuarios SET estado = 1 WHERE id = ${id}`;
+      const [rows] = await pool.query(sql);
+      if(rows.affectedRows > 0) {
+        return   res.status(200).json({
+                              "status":200,
+                              "message":"se Activo con exito el usuario"
+                                }
+                                );
+      }else{
+        return    res.status(401).json({
+                                "status":401,
+                                "message":"no se activo con exito el usuario"
+                                }
+                                );
+        }
+    } catch (err) {
+      console.error('Error en activarUsuaeio:', err);
+      res.status(500).json({ mensaje: 'Error en activarUsuario: ' + err });
+    }
+  };
