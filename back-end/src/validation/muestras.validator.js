@@ -53,11 +53,6 @@ export const validarMuestra = [
   check('presentacion')
     .notEmpty().withMessage('Este campo no puede estar vacío'),
 
-  check('estado')
-    .isNumeric().withMessage('Ingrese un estado válido. Valores válidos: 1 y 0')
-    .matches(/^(1|0)$/).withMessage('Ingrese un estado válido. Valores válidos: 1 y 0')
-    .notEmpty().withMessage('Este campo no puede estar vacío'),
-
   check('cafes_id')
     .isNumeric().withMessage('Ingrese un ID válido, mayor a 0')
     .custom(value => value > 0).withMessage('Ingrese un ID válido, mayor a 0')

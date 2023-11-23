@@ -10,9 +10,9 @@ export const guardarMuestra = async (req, res) => {
         }
         let data = req.body;
 
-        let sql = `INSERT INTO muestras ( fecha_creacion, codigo_externo, consecutivo_informe,muestreo, preparacion_muestra, cantidad, tipo_molienda, tipo_fermentacion, densidad_cafe_verde, fecha_procesamiento, tipo_tostion, tiempo_fermentacion, codigo_muestra, actividad_agua, tiempo_secado, presentacion, estado, cafes_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+        let sql = `INSERT INTO muestras ( fecha_creacion, codigo_externo, consecutivo_informe,muestreo, preparacion_muestra, cantidad, tipo_molienda, tipo_fermentacion, densidad_cafe_verde, fecha_procesamiento, tipo_tostion, tiempo_fermentacion, codigo_muestra, actividad_agua, tiempo_secado, presentacion, cafes_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
-        const [rows] = await pool.query(sql, [ data.fecha_creacion,data.codigo_externo,data.consecutivo_informe,data.muestreo,data.preparacion_muestra,data.cantidad,data.tipo_molienda,data.tipo_fermentacion,data.densidad_cafe_verde,data.fecha_procesamiento,data.tipo_tostion,data.tiempo_fermentacion,data.codigo_muestra,data.actividad_agua,data.tiempo_secado,data.presentacion,data.estado,data.cafes_id ]); 
+        const [rows] = await pool.query(sql, [ data.fecha_creacion,data.codigo_externo,data.consecutivo_informe,data.muestreo,data.preparacion_muestra,data.cantidad,data.tipo_molienda,data.tipo_fermentacion,data.densidad_cafe_verde,data.fecha_procesamiento,data.tipo_tostion,data.tiempo_fermentacion,data.codigo_muestra,data.actividad_agua,data.tiempo_secado,data.presentacion,data.cafes_id ]); 
         
         if (rows.affectedRows > 0) {
             res.status(200).json({
@@ -48,7 +48,7 @@ export const actualizarMuestra = async (req, res) => {
 
         // let sql = `UPDATE muestras SET fecha_creacion='${data.fecha}',cantidad='${data.cantidad}',estado='${data.estado}',cafes_id='${data.cafe}' where id='${id}'`
 
-        let sql =`UPDATE muestras SET fecha_creacion='${data.fecha_creacion}',codigo_externo='${data.codigo_externo}',consecutivo_informe='${data.consecutivo_informe}',muestreo='${data.muestreo}',preparacion_muestra='${data.preparacion_muestra}',cantidad='${data.cantidad}',tipo_molienda='${data.tipo_molienda}',tipo_fermentacion='${data.tipo_fermentacion}',densidad_cafe_verde='${data.densidad_cafe_verde}',fecha_procesamiento='${data.fecha_procesamiento}',tipo_tostion='${data.tipo_tostion}',tiempo_fermentacion='${data.tiempo_fermentacion}',codigo_muestra='${data.codigo_muestra}',actividad_agua='${data.actividad_agua}',tiempo_secado='${data.tiempo_secado}',presentacion='${data.presentacion}',estado='${data.estado}',cafes_id='${data.cafes_id}' WHERE id =${id}`
+        let sql =`UPDATE muestras SET fecha_creacion='${data.fecha_creacion}',codigo_externo='${data.codigo_externo}',consecutivo_informe='${data.consecutivo_informe}',muestreo='${data.muestreo}',preparacion_muestra='${data.preparacion_muestra}',cantidad='${data.cantidad}',tipo_molienda='${data.tipo_molienda}',tipo_fermentacion='${data.tipo_fermentacion}',densidad_cafe_verde='${data.densidad_cafe_verde}',fecha_procesamiento='${data.fecha_procesamiento}',tipo_tostion='${data.tipo_tostion}',tiempo_fermentacion='${data.tiempo_fermentacion}',codigo_muestra='${data.codigo_muestra}',actividad_agua='${data.actividad_agua}',tiempo_secado='${data.tiempo_secado}',presentacion='${data.presentacion}',cafes_id='${data.cafes_id}' WHERE id =${id}`
 
         console.log("user",sql);
 
