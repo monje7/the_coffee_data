@@ -66,6 +66,11 @@ export const guardarmunicipio = async(req, res) => {
 
 export const actualizarmunicipio = async(req,res) => {
     try {
+        
+        let error= validationResult(req);
+        if (!error.isEmpty()) {
+            return res.status(400).json(error);
+        }
         let id= req.params.id;
         let {nombre,fecha_creacion,departamentos_id} = req.body;
         let sql= `update municipios set nombre='${nombre}',fecha_creacion='${fecha_creacion}',departamentos_id='${departamentos_id}' where id='${id}'`;

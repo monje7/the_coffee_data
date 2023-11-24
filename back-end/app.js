@@ -8,10 +8,8 @@ import variedadesRoute from "./src/routers/variedades.route.js";
 import loteRoute from "./src/routers/lote.router.js";
 import analisisRoute from "./src/routers/analisis.router.js";
 import resultadoRoute from "./src/routers/resultado.router.js";
-import variablesRoute from "./src/routers/variables.router.js";
 import cafeRoute from "./src/routers/cafe.router.js";
-import tokenRoute from "./src/routers/token_usuario.router.js";
-import tipoAnalisisRoute from "./src/routers/tipo_analisis.router.js";
+
 import autRoute from "./src/routers/autenticacion.router.js";
 
 
@@ -28,10 +26,7 @@ app.use('/variedad',variedadesRoute);
 app.use('/lote',loteRoute);
 app.use('/analisis',analisisRoute);
 app.use('/resultado',resultadoRoute);
-app.use('/variable',variablesRoute);
 app.use('/cafe',cafeRoute);
-app.use('/token',tokenRoute);
-app.use('/tipoAnalisis',tipoAnalisisRoute)
 app.use('/validacion',autRoute)
 
 

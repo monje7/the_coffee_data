@@ -11,8 +11,8 @@ export const guardarAnalisis = async (req,res)=>{
         let data = req.body;
         console.log('user',data);
         
-        let sql = 'INSERT INTO analisis( fecha_analisis, calidad, estado, tipo_analisis_id, muestras_id, usuarios_id) VALUES (?,?,?,?,?,?)';
-        const [rows] = await pool.query(sql,[data.fecha_analisis,data.calidad,data.estado,data.tipo_analisis_id,data.muestras_id,data.usuarios_id]);
+        let sql = 'INSERT INTO analisis( fecha_analisis, calidad,tipo_analisis_id, muestras_id, usuarios_id) VALUES (?,?,?,?,?)';
+        const [rows] = await pool.query(sql,[data.fecha_analisis,data.calidad,data.tipo_analisis_id,data.muestras_id,data.usuarios_id]);
 
         if(rows.affectedRows>0){
             res.status(200).json({
@@ -153,7 +153,7 @@ export const actualizarAnalisis = async (req, res) => {
         let id = req.params.id;
         let data = req.body;
 
-        let sql = `UPDATE analisis SET fecha_analisis='${data.fecha_analisis}',calidad='${data.calidad}',estado='${data.estado}',tipo_analisis_id='${data.tipo_analisis_id}',muestras_id='${data.muestras_id}',usuarios_id='${data.usuarios_id}' WHERE id= ${id}`
+        let sql = `UPDATE analisis SET fecha_analisis='${data.fecha_analisis}',calidad='${data.calidad}',tipo_analisis_id='${data.tipo_analisis_id}',muestras_id='${data.muestras_id}',usuarios_id='${data.usuarios_id}' WHERE id= ${id}`
     
         // let sql = `update usuarios SET nombres ='${nombres}',direccion='${direccion}',telefono='${telefono}',correo ='${correo}' where  idusuario=${id}`;
 

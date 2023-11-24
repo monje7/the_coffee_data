@@ -9,9 +9,6 @@ export const validarAnalisis = [
     .notEmpty().withMessage('Ingrese una calidad válida')
     .matches(/^(bueno|muy bueno|excelente|extraordinario)$/).withMessage('Ingrese una calidad válida: bueno, muy bueno, excelente o extraordinario'),
 
-  check('estado')
-    .notEmpty().withMessage('Ingrese un valor entre 0 y 1')
-    .isIn(['0', '1']).withMessage('Ingrese un valor válido: 0 o 1'),
 
   check('tipo_analisis_id')
     .notEmpty().withMessage('Ingrese un ID válido')
