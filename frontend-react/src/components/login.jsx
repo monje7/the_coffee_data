@@ -20,10 +20,7 @@ const LoginForm = () => {
                     <img src="img/logotrans.png" alt="logo " width="200px" />
                 </h2>
                 <nav className="navigation">
-                    <a href="#">home</a>
-                    <a href="#">about</a>
-                    <a href="#">services</a>
-                    <a href="#">contact</a>
+                    
                     <button className="btnlogin-popup">login</button>
                 </nav>
             </header>
@@ -34,7 +31,7 @@ const LoginForm = () => {
                 </span>
 
                 <div className="form-box login">
-                    <h2>login</h2>
+                    <h2><img src="img/nombrelogo.png" alt="logo " width="200px" /></h2>
                     <form action="#">
                         <div className="input-box">
                             <span className="icon"><ion-icon name="mail-outline"></ion-icon></span>
