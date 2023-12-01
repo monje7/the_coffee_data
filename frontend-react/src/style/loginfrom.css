@@ -3,14 +3,21 @@
     margin: 0;
 }
 
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../../public/img/fondo2.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+ 
+ 
+}
+
+.fondo {
+    position: fixed;
+    top: 0;
+    left:  0;
+    width: 100%;
 }
 
 header {
@@ -24,6 +31,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 99;
+    
 
 }
 
@@ -66,13 +74,14 @@ header {
 .navigation .btnlogin-popup {
     width: 130px;
     height: 50px;
-    background: transparent;
-    border: 2px solid #fff;
+    background: white;
+    border: unset;
+    /* border: 2px solid #fff; */
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
+    color: black;
     font-weight: 500;
     margin-left: 40px;
     transition: .5s ;
@@ -80,8 +89,8 @@ header {
 }
 
 .navigation .btnlogin-popup:hover {
-background: #fff;
-color: #162938;
+background: rgb(235, 235, 235);
+color: #1f1f1f;
 }
 
 .wrapper{
@@ -181,6 +190,7 @@ color: #162938;
 }
 
 .input-box {
+    background-color: transparent;
     position: relative;
     width: 100%;
     height: 50px;
