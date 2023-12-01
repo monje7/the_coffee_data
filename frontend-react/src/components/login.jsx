@@ -15,6 +15,8 @@ const LoginForm = () => {
 
     return (
         <>
+
+        <img src="../../public/img/fondo2.jpg" alt="" className="fondo" />
             <header>
                 <h2 className="logo">
                     <img src="img/logotrans.png" alt="logo " width="200px" />
