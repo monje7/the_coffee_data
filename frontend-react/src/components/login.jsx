@@ -34,7 +34,7 @@ const LoginForm = () => {
                 </span>
 
                 <div className="form-box login">
-                    <h2>logo</h2>
+                    <h2>login</h2>
                     <form action="#">
                         <div className="input-box">
                             <span className="icon"><ion-icon name="mail-outline"></ion-icon></span>
