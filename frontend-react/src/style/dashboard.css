@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    color:  white;
+    position: relative;
+    left: 0px;
+    /* width: 400px; */
+    width: 19%;
+    height: 100vh;
+    background-color: rgba(30, 30, 30, 0.767);
+}
+
+/* /////////////////////////////////////HEAD NAV (Title,User name)////////////////////// */
+.container-title{
+    display: flex;
+    width: 100%;
+    height: 75px;
+    justify-content: center;
+    transition: all 820ms;
+
+}
+
+.container-title:hover{
+    color:  rgb(204, 153, 12);
+    cursor: pointer;
+}
+.title{
+    position: relative;
+    top: 12px;
+    font-weight: 700;
+}
+
+/* Username */
+.container-username{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 84px;
+    position: relative;
+    top: -2px;
+    transition: all 820ms;
+}
+.container-username:hover{
+    color:  rgb(204, 153, 12);
+    cursor: pointer;
+    
+} 
+.FaUser {
+    font-size: 3em;
+    padding-right: 20px;
+    margin-top: 6px;
+}
+.username{
+    margin-top: 12px;
+}
+
+/* /////////////////////////////////////////////////////LISTA ITEMS////////////////////////////////////////////////// */
+.lista-items{
+    display: table-column-group;
+    /* display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center; */
+    width: 100%;
+    position: relative;
+    top: -35px;
+}
+li{
+    list-style: none;
+    height: 54px;
+    /* background-color: red; */
+    width:90%;
+    font-size: 2.1em;
+    margin-top: 28px;
+    transition: all 820ms;
+}
+.icon{
+    margin-right: 32px;
+}
+li:hover{
+    /* background-color: rgba(70, 68, 68, 0.918); */
+    color: rgb(204, 153, 12);
+    border-radius: 10px;
+    cursor: pointer;
+}
