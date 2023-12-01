@@ -32,6 +32,9 @@ const ListarFinca = () => {
                         <th className="border p-2">Latitud</th>
                         <th className="border p-2">Estado</th>
                         <th className="border p-2">Nombre Vereda</th>
+                        <th className="border p-2">opciones</th>
+
+
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +47,15 @@ const ListarFinca = () => {
                             <td className="border p-2 text-center">{task.latitud}</td>
                             <td className="border p-2 text-center">{task.estado}</td>
                             <td className="border p-2 text-center">{task.noombre_vereda}</td>
+                            <td className="border p-2 text-center">
+                                <button className="bg-green-500 text-white px-4 py-2 rounded mr-2" onClick={() => handleUpdate(task.id)}>
+                                    Actualizar
+                                </button>
+                                <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={() => handleDelete(task.id)}>
+                                    Eliminar
+                                </button>
+                            </td>
+
                         </tr>
                     ))}
                 </tbody>

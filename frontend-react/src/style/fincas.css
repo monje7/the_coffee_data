@@ -14,17 +14,22 @@
   }
   
   .table1 th {
-    background-color: #f2f2f2;
+    background-color: rgba(30,30,30);
+    color: white;
   }
   
   .table1 tr:hover {
-    background-color: #f5f5f5;
+    background-color: #968c8c;
+  }
+  .border-t{
+    background-color: #2980b9;
+    color: rgb(255, 255, 255);
   }
   
 /* 
   //estilos fincas registrar// */
 
-/* Estilos CSS puros para la clase .tabla2 */
+
 .tabla2 {
     max-width: 400px;
     margin: auto;
