@@ -18,8 +18,10 @@ const ListarFinca = () => {
         }
         buscarFincas();
     }, []);
-    return (
+    return (<>
+        <img src="../../public/img/fondo.png" alt="" className="fondo2" />
         <div className="m-3 p-3 mx-auto">
+         
             <h1 className="text-center font-bold underline text-3xl">Fincas</h1>
             <br />
             <table className="table1">
@@ -62,7 +64,7 @@ const ListarFinca = () => {
             </table>
         </div>
 
-
+        </>
     )
 }
 
