@@ -1,17 +1,19 @@
-*{
- 
-    margin: 0;
-    padding: 0;
-}
 
-.cont-img{
-    /* background-color: rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px); */
-    background-repeat: no-repeat;
-    background: url(/public/img/fondo.png);
+.fondo3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
-.nav{
-    text-decoration: white;
-  
+.cont-main{
+    position: relative;
+    background-color: rgb(30, 30, 30,50%);
+    display: block;
+    left: -200px;
+    backdrop-filter: blur(1
+    0px);
+}
+li{
+    color: rgb(255, 255, 255);
+    font-size: 1em;
 }

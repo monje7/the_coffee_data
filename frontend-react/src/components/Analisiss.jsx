@@ -1,25 +1,59 @@
 import React,{useEffect,useRef} from "react";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
 import '../style/analisis.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser,faHelmetSafety,faClockRotateLeft,faMugSaucer,faToolbox,faMagnifyingGlassChart,faChartColumn,faPhone,faSliders}  from'@fortawesome/free-solid-svg-icons'
 
 function Analisiss() {
   return (
-        <div className="cont-img">
+    <>
 
-          <div className="main-cont">
-           <nav className="nav">
-              <ul>
-                <li><a href=""></a>scdnsefc</li>
-              </ul>
-           </nav>
+        <img src="../../public/img/fondo.png" alt="hiiiiii" className="fondo3" />
+
+        <div className="cont-main">
+        
+          <ul>
+                <li>
+                    <FontAwesomeIcon icon={faHelmetSafety} className="icon" />
+                    Administrador
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faClockRotateLeft} className="icon"/>
+                    Historia
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faMugSaucer} className="icon"/>
+                    Mi producto
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faToolbox} className="icon"/>
+                    Servicio
+                </li>
+                <li>
+                <FontAwesomeIcon icon={faMagnifyingGlassChart} className="icon"/>
+                    Analisis
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faChartColumn} className="icon"/>
+                    Comparacion
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faPhone}className="icon" />
+                    Contacto
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faSliders} className="icon"/>
+                    Configuracion
+                </li>
+
+            </ul>
+
+          
+          
+                  
         </div>
-        </div>
-
-
-       
+    </>  
   );
 }
 
