@@ -1,20 +1,19 @@
 import React,{useEffect,useRef} from "react";
+import api from "../services/api";
 import { useNavigate } from "react-router-dom";
-import { Table} from "react-bootstrap";
-import Image from 'react-bootstrap/Image';
+import Nav from 'react-bootstrap/Nav';
 
-
-
-function FluidExample() {
-  return <Image src="holder.js/100px250" fluid />;
-
-
-
-
-  
+function Analisis() {
+  return (
+    <Nav defaultActiveKey="/home" className="flex-column">
+      <Nav.Link href="/home">Active</Nav.Link>
+      <Nav.Link eventKey="link-1">Link</Nav.Link>
+      <Nav.Link eventKey="link-2">Link</Nav.Link>
+      <Nav.Link eventKey="disabled" disabled>
+        Disabled
+      </Nav.Link>
+    </Nav>
+  );
 }
 
-export default FluidExample;
-
-
-
+export default Analisis;
