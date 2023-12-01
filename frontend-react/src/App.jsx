@@ -6,6 +6,7 @@ import Muestra from './components/Resultados'
 import Dashboard from './components/dashboard'
 import Finca from './components/fincas'
 import Registrar from './components/fincaRegistrar'
+import Analisiss from './components/Analisiss'
 import LoginForm from './components/login'
 
 function App(){
@@ -16,6 +17,7 @@ function App(){
         <Route path='/Muestra' element={<Muestra/>}/>
         <Route path='/finca/listar' element={<Finca/>}/>
         <Route path='/finca/registrar' element={<Registrar/>}/>
+        <Route path='/Analisis' element={<Analisiss/>}/>
         <Route path='/loginfrom'  element={<LoginForm/>}/>
       </Routes>
     </>

@@ -1,0 +1,19 @@
+
+.fondo3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.cont-main{
+    position: relative;
+    background-color: rgb(30, 30, 30,50%);
+    display: block;
+    left: -200px;
+    backdrop-filter: blur(1
+    0px);
+}
+li{
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+}
