@@ -31,7 +31,7 @@ const LoginForm = () => {
                 </span>
 
                 <div className="form-box login">
-                    <h2><img src="img/nombrelogo.png" alt="logo " width="200px" /></h2>
+                    <h2><img src="img/nombrelogo.png" alt="logo " width="250px" /></h2>
                     <form action="#">
                         <div className="input-box">
                             <span className="icon"><ion-icon name="mail-outline"></ion-icon></span>
