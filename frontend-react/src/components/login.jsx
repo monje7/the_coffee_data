@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import '../style/loginfrom.css';
-import { faUser, faHelmetSafety, faClockRotateLeft, faMugSaucer, faToolbox, faMagnifyingGlassChart, faChartColumn, faPhone, faSliders } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faUser,faLock,faXmark,faPlay, faHelmetSafety, faClockRotateLeft, faMugSaucer, faToolbox, faMagnifyingGlassChart, faChartColumn, faPhone, faSliders } from '@fortawesome/free-solid-svg-icons';
 import api from "../services/api";
+
 
 const LoginForm = () => {
     useEffect(() => {
@@ -16,7 +18,7 @@ const LoginForm = () => {
     return (
         <>
 
-        <img src="../../public/img/fondo2.jpg" alt="" className="fondo" />
+        <img src="../../public/img/fondo4.jpg" alt="" className="fondo" />
             <header>
                 <h2 className="logo">
                     <img src="img/logotrans.png" alt="logo " width="200px" />
@@ -29,19 +31,19 @@ const LoginForm = () => {
 
             <div className="wrapper">
                 <span className="icon-close">
-                    <ion-icon name="close-outline"></ion-icon>
+                <FontAwesomeIcon icon={faXmark} />
                 </span>
 
                 <div className="form-box login">
                     <h2><img src="img/nombrelogo.png" alt="logo " width="250px" /></h2>
                     <form action="#">
                         <div className="input-box">
-                            <span className="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                            <span className="icon"><FontAwesomeIcon icon={faUser} /></span>
                             <input type="email" required />
                             <label>Correo</label>
                         </div>
                         <div className="input-box">
-                            <span className="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                            <span className="icon"><FontAwesomeIcon icon={faLock} /></span>
                             <input type="password" required />
                             <label>Contraseña</label>
                         </div>
@@ -53,7 +55,7 @@ const LoginForm = () => {
                             <a href="#">olvidaste tu contraseña</a>
                         </div>
 
-                        <button type="buttom" className="btn">login</button>
+                        <button type="buttom" className="btn">login...<FontAwesomeIcon icon={faPlay} /></button>
 
                        
                     </form>
@@ -62,7 +64,9 @@ const LoginForm = () => {
             <div id="sourcers">
 
             </div>
+            
         </>
+        
     );
 };
 
