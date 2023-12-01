@@ -7,14 +7,19 @@ import {faUser,faHelmetSafety,faClockRotateLeft,faMugSaucer,faToolbox,faMagnifyi
 
 function Analisiss() {
   return (
-   
-        <div className="main-cont">
+        <div className="cont-img">
+
+          <div className="main-cont">
            <nav className="nav">
               <ul>
                 <li><a href=""></a>scdnsefc</li>
               </ul>
            </nav>
         </div>
+        </div>
+
+
+       
   );
 }
 
