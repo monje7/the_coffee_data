@@ -8,10 +8,10 @@
 .cont-main{
     position: relative;
     background-color: rgb(30, 30, 30,50%);
-    display: block;
-    left: -200px;
-    backdrop-filter: blur(1
-    0px);
+    display: flex;
+    left: 0;
+    width: 300px;
+    backdrop-filter: blur(10px);
 }
 li{
     color: rgb(255, 255, 255);
