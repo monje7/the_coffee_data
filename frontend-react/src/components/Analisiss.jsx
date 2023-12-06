@@ -10,49 +10,55 @@ function Analisiss() {
     <>
 
         <img src="../../public/img/fondo.png" alt="hiiiiii" className="fondo3" />
+        <header>
 
-        <div className="cont-main">
-        
-          <ul>
-                <li>
-                    <FontAwesomeIcon icon={faHelmetSafety} className="icon" />
-                    Administrador
-                </li>
-                <li>
-                    <FontAwesomeIcon icon={faClockRotateLeft} className="icon"/>
-                    Historia
-                </li>
-                <li>
-                    <FontAwesomeIcon icon={faMugSaucer} className="icon"/>
-                    Mi producto
-                </li>
-                <li>
-                    <FontAwesomeIcon icon={faToolbox} className="icon"/>
-                    Servicio
-                </li>
-                <li>
-                <FontAwesomeIcon icon={faMagnifyingGlassChart} className="icon"/>
-                    Analisis
-                </li>
-                <li>
-                    <FontAwesomeIcon icon={faChartColumn} className="icon"/>
-                    Comparacion
-                </li>
-                <li>
-                    <FontAwesomeIcon icon={faPhone}className="icon" />
-                    Contacto
-                </li>
-                <li>
-                    <FontAwesomeIcon icon={faSliders} className="icon"/>
-                    Configuracion
-                </li>
+            <h1>ADMIN</h1>
+        </header>
+        <nav className="navbar">
+               <div className="list-items">
+                   <ul>
+                       <li>
+                           <FontAwesomeIcon icon={faHelmetSafety} className="icon" />
+                           Administrador
+                       </li>
+                       <li>
+                           <FontAwesomeIcon icon={faClockRotateLeft} className="icon"/>
+                           Historia
+                       </li>
+                       <li>
+                           <FontAwesomeIcon icon={faMugSaucer} className="icon"/>
+                           Mi producto
+                       </li>
+                       <li>
+                           <FontAwesomeIcon icon={faToolbox} className="icon"/>
+                           Servicio
+                       </li>
+                       <li>
+                       <FontAwesomeIcon icon={faMagnifyingGlassChart} className="icon"/>
+                           Analisis
+                       </li>
+                       <li>
+                           <FontAwesomeIcon icon={faChartColumn} className="icon"/>
+                           Comparacion
+                       </li>
+                       <li>
+                           <FontAwesomeIcon icon={faPhone}className="icon" />
+                           Contacto
+                       </li>
+                       <li>
+                           <FontAwesomeIcon icon={faSliders} className="icon"/>
+                           Configuracion
+                       </li>
 
-            </ul>
+
+                   </ul>
+               </div>
+           </nav>
+
+    
 
           
-          
-                  
-        </div>
+     
     </>  
   );
 }
