@@ -11,6 +11,7 @@ import LoginForm from './components/login'
 import GuardarResultado from './components/registrarResultados'
 import Listarlote from './components/lotelistar'
 import Registrarlote from './components/loteRegistrar'
+import EditarLote from './components/editarlote'
 
 function App(){
   return(
@@ -23,6 +24,7 @@ function App(){
         <Route path='/finca/registrar' element={<Registrar/>}/>
         <Route path='/lote/listar' element={<Listarlote/>}/>
         <Route path='/lote/registrar' element={<Registrarlote/>}/>
+        <Route path='/lote/editar/:id' element={<EditarLote/>}/>
         <Route path='/Analisis' element={<Analisiss/>}/>
         <Route path='/loginfrom'  element={<LoginForm/>}/>
       </Routes>

@@ -40,8 +40,11 @@ const Listarlote = () => {
                 </thead>
                 <tbody>
                     {lotes.map((task) => (
+                        
+                        
+                        
                         <tr key={task.id} className="border-t">
-                            <td className="border p-2 text-center">{task.id}</td>
+                            <td className="border p-2 text-center"><Link to={`/lote/editar/${task.id}`}>{task.id}</Link></td>
                             <td className="border p-2 text-center">{task.fecha_creacion}</td>
                             <td className="border p-2 text-center">{task.nombre}</td>
                             <td className="border p-2 text-center">{task.longitud}</td>
