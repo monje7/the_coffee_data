@@ -8,13 +8,15 @@ import Finca from './components/fincas'
 import Registrar from './components/fincaRegistrar'
 import Analisiss from './components/Analisiss'
 import LoginForm from './components/login'
+import GuardarResultado from './components/registrarResultados'
 
 function App(){
   return(
     <>
       <Routes>
-      <Route path='/' element={<Dashboard/>}/>
-        <Route path='/Muestra' element={<Muestra/>}/>
+      <Route path='/dasboard' element={<Dashboard/>}/>
+        <Route path='/Resultado' element={<Muestra/>}/>
+        <Route path='/resultado/guardar' element={<GuardarResultado/>}/>
         <Route path='/finca/listar' element={<Finca/>}/>
         <Route path='/finca/registrar' element={<Registrar/>}/>
         <Route path='/Analisis' element={<Analisiss/>}/>
