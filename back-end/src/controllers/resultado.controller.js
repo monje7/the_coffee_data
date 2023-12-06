@@ -36,7 +36,7 @@ export const guardarResultado = async (req, res) => {
 export const buscarResultado = async (req, res) => {
     try {
         let id = req.params.id;
-        const [result] = await pool.query("SELECT r.valor, r.analisis_id AS Analisis, v.nombre AS variable,r.fecha_creacion FROM resultados AS r JOIN variables AS v ON r.variables_id = v.id WHERE analisis_id = ?", [id]);
+        const [result] = await pool.query("SELECT r.valor, t.nombre AS Analisis, v.nombre AS variable,r.fecha_creacion FROM resultados AS r JOIN variables AS v ON r.variables_id = v.id join tipos_analisis as t on r.analisis_id = t.id WHERE analisis_id = ?", [id]);
         res.status(200).json(result);
     } catch (err) {
         res.status(500).json({
@@ -48,7 +48,7 @@ export const buscarResultado = async (req, res) => {
 
 export const listarResultados = async (req, res) => {
     try {
-        const [result] = await pool.query("SELECT r.valor, r.analisis_id AS Analisis, v.nombre AS variable,r.fecha_creacion FROM resultados AS r JOIN variables AS v ON r.variables_id = v.id;");
+        const [result] = await pool.query("SELECT r.valor, r.analisis_id as analisis, v.nombre AS variable,r.fecha_creacion FROM resultados AS r JOIN variables AS v ON r.variables_id = v.id join tipos_analisis as t on r.analisis_id = t.id;");
         res.status(200).json(result);
     } catch (err) {
         res.status(500).json({
