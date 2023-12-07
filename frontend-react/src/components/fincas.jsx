@@ -21,7 +21,7 @@ const ListarFinca = () => {
     return (<>
         <img src="../../public/img/fondo.png" alt="" className="fondo2" />
         <div className="m-3 p-3 mx-auto">
-         
+
             <h1 className="text-center font-bold underline text-3xl">Fincas</h1>
             <br />
             <table className="table1">
@@ -50,11 +50,14 @@ const ListarFinca = () => {
                             <td className="border p-2 text-center">{task.estado}</td>
                             <td className="border p-2 text-center">{task.noombre_vereda}</td>
                             <td className="border p-2 text-center">
-                                <button className="bg-green-500 text-white px-4 py-2 rounded mr-2" onClick={() => handleUpdate(task.id)}>
-                                    Actualizar
-                                </button>
-                                <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={() => handleDelete(task.id)}>
-                                    Eliminar
+                                <button
+                                    type="button"
+                                    className="btn-primary"
+                                    onClick={() => handleUpdate(task.id)}
+                                >
+                                    <Link to={`/finca/editar/${task.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        Modificar
+                                    </Link>
                                 </button>
                             </td>
 
@@ -64,7 +67,7 @@ const ListarFinca = () => {
             </table>
         </div>
 
-        </>
+    </>
     )
 }
 

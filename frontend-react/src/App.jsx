@@ -12,6 +12,7 @@ import GuardarResultado from './components/registrarResultados'
 import Listarlote from './components/lotelistar'
 import Registrarlote from './components/loteRegistrar'
 import EditarLote from './components/editarlote'
+import EditarFinca from './components/EditarFinca'
 
 function App(){
   return(
@@ -22,6 +23,7 @@ function App(){
         <Route path='/resultado/guardar' element={<GuardarResultado/>}/>
         <Route path='/finca/listar' element={<Finca/>}/>
         <Route path='/finca/registrar' element={<Registrar/>}/>
+        <Route path='/finca/editar/:id' element={<EditarFinca/>}/>
         <Route path='/lote/listar' element={<Listarlote/>}/>
         <Route path='/lote/registrar' element={<Registrarlote/>}/>
         <Route path='/lote/editar/:id' element={<EditarLote/>}/>
