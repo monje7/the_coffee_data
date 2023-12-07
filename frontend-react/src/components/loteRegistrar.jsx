@@ -37,7 +37,7 @@ const Registrarlote = () => {
     }
     return (<>
         <img src="../../public/img/fondo.png" alt="" className="fondo2" />
-        <form className="tabla2" onSubmit={handleSubmit} method="post">
+        <form className="tabla3" onSubmit={handleSubmit} method="post">
             <h1 className="text-center font-bold underline text-3xl p-3 m-2">Crear lote</h1>
 
             <div className="div-input">

@@ -42,7 +42,7 @@ const Registrar = () => {
     return (<>
         <img src="../../public/img/fondo.png" alt="" className="fondo2" />
         <form className="tabla2" onSubmit={handleSubmit} method="post">
-            <h1 className="text-center font-bold underline text-3xl p-3 m-2">Crear finca</h1>
+            <h1 className="text-center font-bold underline text-3xl p-3 m-2">Registrar finca</h1>
 
             <div className="div-input">
                 <input type="date" id="fecha_creacion" name="fecha_creacion" ref={fecha_creacion} placeholder="" />

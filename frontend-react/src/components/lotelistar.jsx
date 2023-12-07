@@ -18,55 +18,52 @@ const Listarlote = () => {
         }
         buscarlotes();
     }, []);
-    return (<>
-        <img src="../../public/img/fondo.png" alt="" className="fondo2" />
-        <div className="m-3 p-3 mx-auto">
-         
-            <h1 className="text-center font-bold underline text-3xl">lotes</h1>
+    return (
+        <>
+          <img src="../../public/img/fondo.png" alt="" className="fondo2" />
+          <div className="tablalistar">
+            <h1 className="titu">lotes</h1>
             <br />
-            <table className="table1">
-                <thead>
-                    <tr className="bg-gray-200">
-                        <th className="border p-2">id</th>
-                        <th className="border p-2">Fecha Creación</th>
-                        <th className="border p-2">Nombre</th>
-                        <th className="border p-2">Longitud</th>
-                        <th className="border p-2">Latitud</th>
-                        <th className="border p-2">Estado</th>
-                        <th className="border p-2">opciones</th>
-
-
-                    </tr>
-                </thead>
-                <tbody>
-                    {lotes.map((task) => (
-                        
-                        
-                        
-                        <tr key={task.id} className="border-t">
-                            <td className="border p-2 text-center"><Link to={`/lote/editar/${task.id}`}>{task.id}</Link></td>
-                            <td className="border p-2 text-center">{task.fecha_creacion}</td>
-                            <td className="border p-2 text-center">{task.nombre}</td>
-                            <td className="border p-2 text-center">{task.longitud}</td>
-                            <td className="border p-2 text-center">{task.latitud}</td>
-                            <td className="border p-2 text-center">{task.estado}</td>
-                            <td className="border p-2 text-center">
-                                <button className="bg-green-500 text-white px-4 py-2 rounded mr-2" onClick={() => handleUpdate(task.id)}>
-                                    Actualizar
-                                </button>
-                                <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={() => handleDelete(task.id)}>
-                                    Eliminar
-                                </button>
-                            </td>
-
-                        </tr>
-                    ))}
-                </tbody>
+            <table className="tableprincipal">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Fecha Creación</th>
+                  <th>Nombre</th>
+                  <th>Longitud</th>
+                  <th>Latitud</th>
+                  <th>Estado</th>
+                  <th>opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {lotes.map((task) => (
+                  <tr key={task.id}>
+                    <td>{task.id}</td>
+                    <td>{task.fecha_creacion}</td>
+                    <td>{task.nombre}</td>
+                    <td>{task.longitud}</td>
+                    <td>{task.latitud}</td>
+                    <td>{task.estado}</td>
+                    <td>
+                      <button
+                        type="button"
+                        className="btn-primary"
+                        onClick={() => handleUpdate(task.id)}
+                      >
+                        <Link to={`/lote/editar/${task.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                          Modificar
+                        </Link>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
-        </div>
-
+          </div>
         </>
-    )
+      );
+      
 }
 
 export default Listarlote
