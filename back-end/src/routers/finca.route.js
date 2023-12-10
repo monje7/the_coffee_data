@@ -8,10 +8,10 @@
 
     fincaRoute.get('/listar',listarFinca);
     fincaRoute.get('/buscar/:id',buscarFinca);
-    fincaRoute.post('/registrar/',validarFinca,guardarFinca);
-    fincaRoute.put('/actualizar/:id',validarFinca,actualizarFinca);
-    fincaRoute.patch('/desactivar/:id',desactivarFinca);
-    fincaRoute.patch('/activar/:id',ActivarFinca);
+    fincaRoute.post('/registrar/',validartoken,validarFinca,guardarFinca);
+    fincaRoute.put('/actualizar/:id',validartoken,validarFinca,actualizarFinca);
+    fincaRoute.patch('/desactivar/:id',validartoken,desactivarFinca);
+    fincaRoute.patch('/activar/:id',validartoken,ActivarFinca);
 
 
 

@@ -10,12 +10,12 @@ loteRoute.get('/listar',listarlote);
 
 loteRoute.get('/buscar/:id',buscarlote);
 
-loteRoute.post('/registrar',validarLote,guardarlote);
+loteRoute.post('/registrar',validartoken,validarLote,guardarlote);
 
-loteRoute.put('/Actualizar/:id',actualizarlote);
+loteRoute.put('/Actualizar/:id',validartoken,actualizarlote);
 
-loteRoute.patch('/Desactivar/:id',desactivarlote);
+loteRoute.patch('/Desactivar/:id',validartoken,desactivarlote);
 
-loteRoute.patch('/activar/:id',Activarlote);
+loteRoute.patch('/activar/:id',validartoken,Activarlote);
 
 export default  loteRoute;
